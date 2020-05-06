@@ -3,5 +3,12 @@
     padding: 10px 5px;
     width: max-content;
     background-color: black;
-    
+
+}
+.image_res{
+  width: 200px;
+  height: 200px;
+}
+.res_name{
+  border: 1px solid red;
 }

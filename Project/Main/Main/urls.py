@@ -18,6 +18,8 @@ from django.urls import path
 from django.conf.urls import include
 from User import views as v
 from django.contrib.auth import views as auth_view
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 
@@ -28,4 +30,4 @@ urlpatterns = [
     path('login', auth_view.LoginView.as_view(template_name='user/login.html'), name='login_url'),
     path('logout', auth_view.LoginView.as_view(template_name='user/logout.html'), name='logout_url'),
     path('', include('django.contrib.auth.urls'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
