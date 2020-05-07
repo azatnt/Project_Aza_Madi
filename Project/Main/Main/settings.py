@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Miri',
     'crispy_forms',
     'Restaurants',
+    'Food',
 ]
 
 MIDDLEWARE = [
