@@ -13,53 +13,27 @@ body {
     list-style: none;
   }
 
-  .main-wrapper {
-      width: 100%;
-      height: 100%;
-  }
-
   .header {
       width: 100%;
       display: flex;
-      align-items: center;
       border-bottom: 1px solid black;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      position: block;
-      top: 0;
-      z-index: 1000;
-      background-color: white;
+      padding: 10px;
   }
 
   .logo {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
       width: 15%;
+      border-right: 1px solid black;
   }
-
-
 
   .header input {
-    text-align: left;
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 30px;
-    width: 70%;
-    margin: 0 auto;
-    font-size: 17px;
-    transition: 0.3s ease-in;
-    padding-left: 20px;
-  }
-
-  .header input:hover {
-      border-color: orange;
+      border: none;
+      width: 100%;
+      font-size: 10px;
   }
 
   .search {
-      width: 55%;
-      display: flex;
-      align-items: center;
+      width: 60%;
   }
   
 
@@ -67,7 +41,7 @@ body {
       font-size: 30px;
       line-height: 30px;
       margin-left: 8px;
-      margin-top: 5px;
+      margin-top: 8px;
       font-family: 'PT Sans Narrow', sans-serif;
   }
 
@@ -82,18 +56,17 @@ body {
   }
 
   .logo-icon {
-      width: 60px;
+      width: 65px;
   }
 
   .input-field {
       border-radius: 30px;
-      width: 60%;
+      width: 70%;
       margin: 10px auto;
       border: 1px solid black;
       padding: 20px;
       font-family: 'Roboto', sans-serif;
   }
-
 
 .cart-field {
     margin-top: 150px;
@@ -104,78 +77,3 @@ body {
     display: none;
 }
 
-.header-login-button {
-    font-family: 'Roboto',-apple-system,sans-serif;
-    font-weight: 500;
-    text-align: center;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:  10%;
-    border: 1px solid black;
-    margin-right: 5px;
-    cursor: pointer;
-    transition: 0.3s ease-in;
-}
-
-.login-icon {
-    margin-right: 10px;
-}
-
-.basket-button {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    text-align: center;
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 10%;
-    border: 1px solid black;
-    padding-left: 10px;
-    font-size: 17px;
-    cursor: pointer;
-    margin-left: 60px;
-    transition: 0.3s ease-out;
-}
-
-.basket-icon {
-    margin-right: 10px;
-}
-
-.header-login-button:hover {
-    border: 1px solid orange;
-}
-
-.basket-button:hover {
-    border: 1px solid orange;
-}
-
-
-/* Слайдер промо-акции */
-
-
-.cart-promo {
-    background-color: orange;
-    border-radius: 15px;
-    width: 10%;
-    margin: 30px;
-    height: 150px !important;
-    transition: 0.3s;
-}
-
-.cart-promo:hover {
-    margin-bottom: 5px;
-}
-
-.slider-promo {
-    width: 75%;
-    margin: 0 auto;
-}
-
-.slider-content {
-    width: 100%;
-    background-color: wheat;
-}
