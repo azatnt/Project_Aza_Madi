@@ -12,7 +12,7 @@
   {% for restaurant in restaurant %}
 
     <div class="cart">
-      <a style="text-decoration: none;" href="#">
+      <a style="text-decoration: none;" href="{% url 'restaurant_detail_url' slug=restaurant.slug %}">
       <img class="image_res" src="{{restaurant.image.url}}" alt="image"/>
       </a>
 

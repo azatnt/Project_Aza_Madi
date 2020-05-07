@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Restaurant detail
+{% endblock %}
+
+
+{% block content %}
+
+  {% for restaurant in restaurant.food.all %}
+  <div class="">
+    <a style="text-decoration: none;" href="#">
+    <img class="img_" src="{{restaurant.image.url}}" alt="image"/>
+    </a>
+  </div>
+
+  <div class="">
+    {{restaurant.name}}
+  </div>
+
+  <div class="">
+    {{restaurant.price}}
+  </div>
+
+  <div class="">
+    {{restaurant.description}}
+  </div>
+  {% endfor %}
+
+
+{% endblock %}

@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from time import time
+from Food.models import *
 
 
 def gen_slug(s):
@@ -20,9 +21,28 @@ class Restaurants(models.Model):
     opening_time = models.CharField(max_length=120) #for example: Monday-Sunday 10:00-20:00
     average_delivery = models.CharField(max_length=120) #for example: 20-30 min
 
+    def __str__(self):
+        return str(self.name)
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = gen_slug(self.name)
+        super().save(*args, **kwargs)
+
+
+
+class Foods(models.Model):
+    name = models.CharField(max_length=120)
+    slug = models.SlugField(blank=True)
+    image = models.ImageField(blank=True)
+    price = models.IntegerField()
+    description = models.TextField(max_length=1000)
+    restaurant = models.ManyToManyField('Restaurants', related_name='food')
+
 
     def __str__(self):
         return str(self.name)
+
 
     def save(self, *args, **kwargs):
         if not self.id:
