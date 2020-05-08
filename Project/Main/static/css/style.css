@@ -163,3 +163,13 @@ a {
     width: 100%;
     background-color: wheat;
 }
+
+
+.cart-field {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart-field img {
+    width: 100px;
+}
