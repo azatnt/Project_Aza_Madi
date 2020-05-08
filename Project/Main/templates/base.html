@@ -2,15 +2,20 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick-1.8.1/slick/slick.css' %}"/>
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick-1.8.1/slick/slick-theme.css' %}"/>
 </head>
+<title>
+  {% block title %}
+
+  {% endblock %}
+</title>
 <body>
 
   <div class="main-wrapper">
-    
+
   <header class="header">
     <div class="logo">
       <img src="{% static 'css/img/pizza-icon.png' %}" alt="Logo" width="100px" class="logo-icon">
@@ -70,6 +75,10 @@
     </div>
 
 </div>
+
+{% block content %}
+
+{% endblock %}
 
   <script src="{% static 'vendor/jquery-3.5.1.min.js'  %}"></script>
   <script src="{% static 'vendor/slick-1.8.1/slick/slick.min.js' %}" ></script>

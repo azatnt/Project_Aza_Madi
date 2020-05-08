@@ -17,5 +17,3 @@ def SignUp(request):
 	else:
 		form = SignUpForm()
 	return render(request, 'user/signup.html', context={'form':form})
-
-	
