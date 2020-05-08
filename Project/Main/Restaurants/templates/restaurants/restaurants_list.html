@@ -12,29 +12,41 @@
   {% for restaurant in restaurant %}
 
     <div class="cart">
+      <div class="cart-icon">
       <a style="text-decoration: none;" href="{% url 'restaurant_detail_url' slug=restaurant.slug %}">
-      <img class="image_res" src="{{restaurant.image.url}}" alt="image"/>
+      <img class="image_res" src="{{ restaurant.image.url }}" alt="image"/>
       </a>
-
-      <div class="res_name">
-        {{restaurant.name}}
       </div>
 
-      <div class="res-description">
-          {{restaurant.description}}
-      </div>
 
-      <div class="res-phone">
-        {{restaurant.phone}}
-      </div>
-      <div class="res-address">
-        {{restaurant.address}}
-      </div>
-      <div class="res-time__work">
-        {{restaurant.opening_time}}
-      </div>
-      <div class="res-time__delivery">
-        {{restaurant.average_delivery}}
+      <div class="cart-text">
+        <div class="res_name">
+          {{restaurant.name}}
+        </div>
+  
+        <!-- <div class="res-description">
+            {{restaurant.description}}
+        </div> -->
+  
+        <div class="res-phone">
+          {{restaurant.phone}}
+        </div>
+
+        <div class="res-info">
+          
+            <div class="res-address">
+              {{restaurant.address}}
+            </div>
+
+            <div class="res-time__work">
+              {{restaurant.opening_time}}
+            </div>
+
+            <div class="res-time__delivery">
+              {{restaurant.average_delivery}}
+            </div>
+        </div>
+
       </div>
     </div>
 

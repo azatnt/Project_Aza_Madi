@@ -21,8 +21,7 @@
 
   <header class="header">
     <div class="logo">
-      <img src="{% static 'css/img/pizza-icon.png' %}" alt="Logo" width="60px" class="logo-icon">
-      <div class="logo-text"><a href="#">Almaty  <br> Miri</a></div>
+      <img src="{% static 'img/logo.png' %}" alt="Logo" width="100%" class="logo-icon">
     </div>
     <div class="search">
         <input type="text" class="search-food" name="search-food" placeholder="Поиск ресторана">
@@ -79,7 +78,8 @@
 
 </div>
 
-<div class="cart-field">
+<h2 class="restourants">Рестораны</h2>
+<div class="cart-section">
   {% block content %}
 
   {% endblock %}
