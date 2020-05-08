@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Miri.urls')),
     path('signup', v.SignUp, name='signup_url'),
-    path('login', auth_view.LoginView.as_view(template_name='user/login.html'), name='login_url'),
-    path('logout', auth_view.LoginView.as_view(template_name='user/logout.html'), name='logout_url'),
+    path('login/', auth_view.LoginView.as_view(template_name='user/login.html'), name='login_url'),
+    path('logout/', auth_view.LoginView.as_view(template_name='user/logout.html'), name='logout_url'),
     path('', include('django.contrib.auth.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
