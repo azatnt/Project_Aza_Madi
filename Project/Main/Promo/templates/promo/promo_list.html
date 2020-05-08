@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Promo List
+{% endblock %}
+
+
+{% block content %}
+
+  {% for promo in promo %}
+
+    {{promo.name}}
+
+  {% endfor %}
+
+{% endblock %}

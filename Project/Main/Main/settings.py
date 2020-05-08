@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'Restaurants',
     'Food',
+    'Promo',
 ]
 
 MIDDLEWARE = [
