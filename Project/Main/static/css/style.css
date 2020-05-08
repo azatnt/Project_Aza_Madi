@@ -26,12 +26,15 @@ a {
     color: black;
 }
 
-.logo-text {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    margin-left: 10px;
+.logo-text a {
+    font-family: 'Lexend Exa', sans-serif;
     font-size: 20px;
     margin-top: 10px;
+    transition: 0.3s ease-out;
+}
+
+.logo-text a:hover {
+    color: orangered;
 }
 
 .logo {
@@ -65,6 +68,10 @@ a {
 
 .logo-icon {
     width: 60px;
+    height: 50px;
+    margin-right: 10px;
+    position: relative;
+    top: 0px;
 }
 
 .input-field {
