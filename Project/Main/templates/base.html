@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-<<<<<<< HEAD
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet"> 
-=======
+<!-- <<<<<<< HEAD -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
->>>>>>> 7b0b80ed4a3939dcd5399f659593b5b4fc94b167
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
+<!-- ======= -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+<!-- >>>>>>> 7b0b80ed4a3939dcd5399f659593b5b4fc94b167 -->
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick-1.8.1/slick/slick.css' %}"/>
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick-1.8.1/slick/slick-theme.css' %}"/>
 </head>
@@ -48,39 +48,13 @@
 
   <div class="slider-content">
     <div class="slider-promo slider">
-      <div class="cart-promo">
-        1
-      </div>
-      <div class="cart-promo">
-        2
-      </div>
-      <div class="cart-promo">
-        3
-      </div>
-      <div class="cart-promo">
-        4
-      </div>
-      <div class="cart-promo">
-        5
-      </div>
-      <div class="cart-promo">
-        1
-      </div>
-      <div class="cart-promo">
-        2
-      </div>
-      <div class="cart-promo">
-        3
-      </div>
-      <div class="cart-promo">
-        4
-      </div>
-      <div class="cart-promo">
-        5
-      </div>
+      {% block slider %}
+      
+      {% endblock %}
     </div>
 
 </div>
+
 
 {% block content %}
 
