@@ -189,6 +189,7 @@ a {
     cursor: pointer;
     text-align: center;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     transition: 0.5s;
@@ -291,6 +292,7 @@ a {
 
 .res-phone {
     font-weight: 700;
+    letter-spacing:  1pt
 }
 
 .res-info {
@@ -365,3 +367,11 @@ a {
 .cart-text {
     padding: 0 20px;
 }
+
+
+@media screen and(max-width: 900px) {
+    body {
+        background-color: yellow;
+    }
+}
+
