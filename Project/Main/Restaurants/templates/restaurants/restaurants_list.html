@@ -29,7 +29,11 @@
 
   <a href="{% url 'category_detail_url' slug=category.slug %}">
     <div class="">
-        {{category.name}}
+        <img class="image_res" src="{{ category.image.url }}" alt="image"/>
+    </div>
+
+    <div class="">
+      {{category.name}}
     </div>
 
   </a>
