@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  List of Food
+{% endblock %}
+
+
+{% block content %}
+
+
+  {% for foods in food %}
+      <a style="text-decoration: none;" href="#">
+      <img class="" src="{{foods.image.url}}" alt="image"/>
+      </a>
+    {{foods.name}}
+    {{foods.description}}
+    {{foods.price}}
+
+  {% endfor %}
+
+
+{% endblock %}
