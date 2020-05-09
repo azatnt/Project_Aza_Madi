@@ -9,37 +9,8 @@
 
 {% for promo in promo %}
 
-<div class="cart-promo">
-  {{promo.name}}
-  <img class="img_" src="{{promo.image.url}}" alt="image"/>
-  {{promo.description}}
-</div>
-<div class="cart-promo">
-
-</div>
-<div class="cart-promo">
-
-</div>
-<div class="cart-promo">
-  4
-</div>
-<div class="cart-promo">
-  5
-</div>
-<div class="cart-promo">
-  1
-</div>
-<div class="cart-promo">
-  2
-</div>
-<div class="cart-promo">
-  3
-</div>
-<div class="cart-promo">
-  4
-</div>
-<div class="cart-promo">
-  5
+<div class="cart-promo" data-url= "{{promo.image.url}}">
+  <!-- <img class="img_" src="{{promo.image.url}}" alt="image"/> -->
 </div>
 
 
@@ -63,16 +34,19 @@
 
 
       <div class="cart-text">
-        <div class="res_name">
-          {{restaurant.name}}
-        </div>
-  
-        <!-- <div class="res-description">
-            {{restaurant.description}}
-        </div> -->
-  
-        <div class="res-phone">
-          {{restaurant.phone}}
+        <div class="main-info">
+          <a href="{% url 'restaurant_detail_url' slug=restaurant.slug %}">
+            <div class="res_name">
+              {{restaurant.name}}
+            </div>
+            </a>
+            <!-- <div class="res-description">
+                {{restaurant.description}}
+            </div> -->
+    
+            <div class="res-phone">
+              {{restaurant.phone}}
+            </div>
         </div>
 
         <div class="res-info">
