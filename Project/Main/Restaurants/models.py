@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from time import time
-from Food.models import *
+
 
 
 def gen_slug(s):
