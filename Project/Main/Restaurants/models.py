@@ -34,7 +34,7 @@ class Restaurants(models.Model):
 class Foods(models.Model):
     name = models.CharField(max_length=120)
     slug = models.SlugField(blank=True)
-    image = models.ImageField(blank=True, upload_to='rest-image', default='smth')
+    image = models.ImageField(blank=True, upload_to='food-image', default='smth')
     price = models.IntegerField()
     description = models.TextField(max_length=1000)
     restaurant = models.ManyToManyField('Restaurants', related_name='food')

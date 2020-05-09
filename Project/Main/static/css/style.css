@@ -190,6 +190,20 @@ a {
     margin-bottom: 50px;
 }
 
+.res-type {
+    font-family: 'Lexend Exa', sans-serif;
+    position: relative;
+    left: 10px;
+    width: 75%;
+    margin: 40px auto;
+        margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 46px;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
 .cart-section {
     width: 90%;
     margin: 0 auto;
