@@ -175,6 +175,45 @@ a {
     background-color: black;
 }
 
+/* Карточки типов еды */
+
+.res-type {
+    display: flex;
+}
+
+.food-cart {
+    margin-left: 20px;
+    background-color: #f6f6f6;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.food-cart:hover {
+    background-color: cadetblue;
+}
+
+
+
+@keyframes reduce_radius {
+    from { r: 10; }
+    to { r: 3; }
+}
+@keyframes change_fill {
+    0% { fill: #49549E; }
+    75% { fill: #1bceb1; }
+    100% { fill: #1bce4f; }
+}
+
+.food-icon { fill: #49549E; transition: .3s; }
+.food-icon:hover { fill: #1bceb1; }
+
+
 /* Карточки товаров */
 
 .restourants {
