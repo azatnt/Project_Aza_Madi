@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.text import slugify
 from time import time
+from Category.models import *
+
 
 
 
@@ -20,6 +22,9 @@ class Restaurants(models.Model):
     phone = models.CharField(max_length=50, unique=True)
     opening_time = models.CharField(max_length=120) #for example: Monday-Sunday 10:00-20:00
     average_delivery = models.CharField(max_length=120) #for example: 20-30 min
+    category = models.ManyToManyField('Category.Category', blank=True, related_name='restaurant')
+
+
 
     def __str__(self):
         return str(self.name)

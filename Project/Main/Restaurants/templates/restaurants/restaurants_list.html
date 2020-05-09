@@ -25,6 +25,17 @@
 
 <h2 class="restourants">Рестораны</h2>
 
+{% for category in category %}
+
+  <a href="{% url 'category_detail_url' slug=category.slug %}">
+    <div class="">
+        {{category.name}}
+    </div>
+
+  </a>
+
+
+{% endfor %}
 
 <div class="res-type">
 
