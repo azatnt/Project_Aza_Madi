@@ -25,46 +25,18 @@
 
 <h2 class="restourants">Рестораны</h2>
 
+<div class="res-type">
 {% for category in category %}
-
+<div class="food-cart">
   <a href="{% url 'category_detail_url' slug=category.slug %}">
-    <div class="">
-        <img class="image_res" src="{{ category.image.url }}" alt="image"/>
-    </div>
-
-    <div class="">
-      {{category.name}}
-    </div>
-
+        <img class="image_res" src="{{ category.image.url }}" alt="image"/ width="50px" class="food-icon">
   </a>
+</div>
 
 
 {% endfor %}
-
-<div class="res-type">
-
-  <div class="food-cart">
-    <img src="{% static 'img/food-icons/burger.svg' %}" alt="Burger-icon" width="50px" class="food-icon">
-  </div>
-  <div class="food-cart">
-    <img src="{% static 'img/food-icons/sushi.svg' %}" alt="Burger-icon" width="50px" class="food-icon">
-  </div>
-  <div class="food-cart">
-    <img src="{% static 'img/food-icons/pizza.svg' %}" alt="Burger-icon" width="50px" class="food-icon">
-  </div>
-  <div class="food-cart">
-    <img src="{% static 'img/food-icons/soup.svg' %}" alt="Burger-icon" width="50px" class="food-icon">
-  </div>
-  <div class="food-cart">
-    <img src="{% static 'img/food-icons/fish.svg' %}" alt="Burger-icon" width="50px" class="food-icon">
-  </div>
-  <div class="food-cart">
-    <img src="{% static 'img/food-icons/cebab.svg' %}" alt="Burger-icon" width="50px" class="food-icon">
-  </div>
-  <div class="food-cart">
-    <img src="{% static 'img/food-icons/grilled.svg' %}" alt="Burger-icon" width="50px" class="food-icon">
-  </div>
 </div>
+
 
 <div class="cart-field">
   {% for restaurant in restaurant %}
