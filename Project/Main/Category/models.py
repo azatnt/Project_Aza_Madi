@@ -14,6 +14,7 @@ def gen_slug(s):
 class Category(models.Model):
     name = models.CharField(max_length=120)
     slug = models.SlugField(blank=True, unique=True)
+    image = models.ImageField(upload_to='category-image', blank=True, default='smth')
 
 
 
