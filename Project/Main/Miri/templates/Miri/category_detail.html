@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+  Category
+
+{% endblock %}
+
+
+
+{% block content %}
+
+  {% for category in category.restaurant.all %}
+
+  <div class="cart">
+    <div class="cart-icon">
+    <a style="text-decoration: none;" href="{% url 'restaurant_detail_url' slug=category.slug %}">
+    <img class="image_res" src="{{ category.image.url }}" alt="image"/>
+    </a>
+    </div>
+
+
+    <div class="cart-text">
+      <div class="main-info">
+        <a href="{% url 'restaurant_detail_url' slug=category.slug %}">
+          <div class="res_name">
+            {{category.name}}
+          </div>
+          </a>
+          <!-- <div class="res-description">
+              {{restaurant.description}}
+          </div> -->
+
+          <div class="res-phone">
+            {{category.phone}}
+          </div>
+      </div>
+
+      <div class="res-info">
+
+          <div class="res-address">
+            {{category.address}}
+          </div>
+
+          <div class="res-time__work">
+            {{category.opening_time}}
+          </div>
+
+          <div class="res-time__delivery">
+            {{category.average_delivery}}
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% endfor %}
+
+{% endblock %}
