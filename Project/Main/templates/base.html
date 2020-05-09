@@ -46,8 +46,14 @@
       {% endif %}
     </div>
     <div class="basket-button">
-      <img src="{% static 'img/basket.png' %}" alt="basket" width="25px" class="basket-icon">
-      Корзина
+        <img src="{% static 'img/basket.png' %}" alt="basket" width="25px" class="basket-icon">
+      <a href="{% url 'cart_url' %}">
+        Корзина
+        {% if not request.session.items_total %}
+          0
+        {% else %} {{request.session.items_total}}
+        {% endif %}
+      </a>
     </div>
   </header>
 
