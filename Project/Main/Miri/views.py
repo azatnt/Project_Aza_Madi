@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from Restaurants.models import *
 from Category.models import *
 
@@ -10,13 +10,12 @@ def index(request):
 
 
 def restaurant_detail(request, slug):
-	restaurant = Restaurants.objects.get(slug__iexact=slug)
+	restaurant = Restaurants.objects.get(slug=slug)
 	food = Foods.objects.all()
-	context = {
-		'food':food,
-		'restaurant':restaurant
-	}
-	return render(request, 'Miri/restaurant_detail.html', context=context)
+	return render(request, 'Miri/restaurant_detail.html', context={'food':food, 'restaurant':restaurant})
+
+
+
 
 
 

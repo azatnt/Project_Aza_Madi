@@ -27,17 +27,17 @@
       {{restaurant.price}}
     </div>
     </div>
-  
+
     <div class="food-info">
       {{restaurant.description}}
     </div>
-  
+
     <button type="submit" name="button" class="add-basket">
         <a href="{% url 'update_cart_url' slug=restaurant.slug %}">
           +
         </a>
     </button>
-  
+
   </div>
   {% endfor %}
 </div>

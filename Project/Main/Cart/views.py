@@ -1,7 +1,8 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from django.urls import reverse
 from .models import *
 from Restaurants.models import *
+
 
 
 
