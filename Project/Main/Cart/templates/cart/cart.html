@@ -12,23 +12,34 @@
   {% if empty %}
     <h1 style="text-align:center;">{{empty_message}}</h1>
 
+    <div class="basket-field">
   {% else %}
-      <div class="">
-        Total: {{cart.total}}
+      <h2 class="basket-title">Корзина</h2>
+      <div class="total-sum">
+        Общая сумма: {{cart.total}}
+      </div>
+      <div class="basket-carts">
+        {% for item in cart.cartitem_set.all %}
+        <div class="basket-item">
+            <div class="basket-product__name">
+              {{item.product}}
+            </div>
+          <div class="basket-product__quantity">
+            Количество:{{item.quantity}}
+          </div>
+          <div class="basket-product__price">
+            {{itme.price}}
+          </div>
+            <a href="{% url 'remove_cart_url' item.id %}" class="remove-product">X</a>
+        </div>
+        {% endfor %}
       </div>
 
-      {% for item in cart.cartitem_set.all %}
-
-        {{item.product}}
-        {{item.quantity}}
-        {{itme.price}}
-
-        <a href="{% url 'remove_cart_url' item.id %}">Remove</a>
-
-      {% endfor %}
-
-      <a href="#">Checkout</a>
+      <div class = "checkout-btn"> 
+        <a href="https://robokassa.kz/">Оплатить</a>
+      </div>
 
     {% endif %}
+  </div>
 
 {% endblock %}

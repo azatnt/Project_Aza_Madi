@@ -11,6 +11,8 @@
 
 {% block content %}
 
+  
+<div class="cart-field">
   {% for category in category.restaurant.all %}
 
   <div class="cart">
@@ -28,9 +30,6 @@
             {{category.name}}
           </div>
           </a>
-          <!-- <div class="res-description">
-              {{restaurant.description}}
-          </div> -->
 
           <div class="res-phone">
             {{category.phone}}
@@ -56,5 +55,5 @@
   </div>
 
   {% endfor %}
-
+</div>
 {% endblock %}

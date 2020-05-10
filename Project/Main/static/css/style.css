@@ -247,6 +247,9 @@ a {
 .cart-section {
     width: 90%;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cart-section a {
@@ -254,6 +257,8 @@ a {
     height: 100%;
     display: block;
 }
+
+
 
 
 
@@ -382,6 +387,7 @@ a {
     font-family: 'Lexend Exa', sans-serif;
     position: relative;
     left: 10px;
+    width: 80%;
     margin: 40px auto;
     margin-bottom: 40px;
     font-weight: 600;
@@ -457,4 +463,86 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* Корзина */
+
+.basket-carts {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.basket-item {
+    background-color: orange;
+    width: 25%;
+    padding: 50px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.basket-product__name {
+    font-family: 'Lexend Exa', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.basket-product__quantity {
+    font-family: 'Roboto',-apple-system,sans-serif;
+    color: white;
+}
+
+.remove-product {
+    background-color: firebrick;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto',-apple-system,sans-serif;
+    padding: 5px 10px;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+
+.total-sum {
+    border-bottom: 2px solid orange;
+    margin-bottom: 30px;
+    width: max-content;
+    font-family: 'Roboto',-apple-system,sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 40px;
+}
+
+.total-sum::after {
+    content: 'KZT';
+}
+
+.basket-title {
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 40px;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.checkout-btn {
+    position: fixed;
+    background-color: limegreen;
+    font-family: 'Roboto',-apple-system,sans-serif;
+    width: max-content;
+    padding: 20px;
+    bottom: 20px;
+    right: 20px;
+    margin-bottom: 0px;
+    transition: 0.3s ease-in;
+}
+
+.checkout-btn:hover {
+    margin-bottom: 20px
+}
+
+.checkout-btn a {
+    font-size: 20px;
+    color: white;
 }

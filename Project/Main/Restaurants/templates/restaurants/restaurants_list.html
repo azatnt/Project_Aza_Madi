@@ -34,10 +34,8 @@
 {% endfor %}
 </div>
 
-
 <div class="cart-field">
   {% for restaurant in restaurant %}
-
     <div class="cart">
       <div class="cart-icon">
       <a style="text-decoration: none;" href="{% url 'restaurant_detail_url' slug=restaurant.slug %}">
@@ -79,8 +77,7 @@
 
       </div>
     </div>
-
   {% endfor %}
-</div>
 
 {% endblock %}
+</div>
