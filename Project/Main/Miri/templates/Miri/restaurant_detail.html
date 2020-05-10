@@ -8,34 +8,39 @@
 
 {% block content %}
 
-<h1>Foods</h1>
+<h3 class="res-header">Меню</h3>
 
+<div class="res-foods">
   {% for restaurant in restaurant.food.all %}
-  <div class="">
-    <a style="text-decoration: none;" href="#">
-    <img class="img_" src="{{restaurant.image.url}}" alt="image"/>
-    </a>
+  <div class="res-food__cart">
+    <div class="res-food__icon">
+        <a style="text-decoration: none;" href="#">
+          <img class="img_" src="{{restaurant.image.url}}" alt="image"/>
+          </a>
+    </div>
+
+    <div class="food-main">
+          <div class="food-name">
+      {{restaurant.name}}
+    </div>
+    <div class="food-price">
+      {{restaurant.price}}
+    </div>
+    </div>
+  
+    <div class="food-info">
+      {{restaurant.description}}
+    </div>
+  
+    <button type="submit" name="button" class="add-basket">
+        <a href="{% url 'update_cart_url' slug=restaurant.slug %}">
+          +
+        </a>
+    </button>
+  
   </div>
-
-  <div class="">
-    {{restaurant.name}}
-  </div>
-
-  <div class="">
-    {{restaurant.price}}
-  </div>
-
-  <div class="">
-    {{restaurant.description}}
-  </div>
-
-  <button class="" type="submit" name="button">
-      <a class="" style="text-decoration:none; color: black" href="{% url 'update_cart_url' slug=restaurant.slug %}">
-        Add to Cart
-      </a>
-  </button>
-
   {% endfor %}
+</div>
 
 
 {% endblock %}
