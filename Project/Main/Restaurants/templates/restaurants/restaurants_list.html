@@ -28,7 +28,7 @@
 {% for category in category %}
 <div class="food-cart">
   <a href="{% url 'category_detail_url' slug=category.slug %}" title="{{ category.name }}">
-        <img class="image_res" src="{{ category.image.url }}" alt="image"/ width="50px" class="food-icon">
+        <img class="image_res shakeX" src="{{ category.image.url }}" alt="image"/ width="50px" class="food-icon">
   </a>
 </div>
 {% endfor %}

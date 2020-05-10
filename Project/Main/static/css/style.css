@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto';
 }
 
 
@@ -43,6 +44,12 @@ a {
     flex-wrap: wrap;
     margin-left: 20px;
     width: 15%;
+    font-family: 'Lexend Exa', sans-serif;
+    letter-spacing: 10px;
+}
+
+.logo p::before {
+    font-size: 25px;
 }
 
 .header input {
@@ -545,4 +552,8 @@ a {
 .checkout-btn a {
     font-size: 20px;
     color: white;
+}
+
+.empty-cart__text {
+    font-family: 'Roboto',-apple-system,sans-serif;
 }
