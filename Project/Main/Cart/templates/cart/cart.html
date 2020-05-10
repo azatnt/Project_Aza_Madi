@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Cart
+{% endblock %}
+
+
+
+{% block content %}
+
+  {% if empty %}
+    <h1 style="text-align:center;">{{empty_message}}</h1>
+
+  {% else %}
+      <div class="">
+        Total: {{cart.total}}
+      </div>
+
+      {% for item in cart.cartitem_set.all %}
+
+        {{item.product}}
+        {{item.quantity}}
+        {{itme.price}}
+
+        <a href="{% url 'remove_cart_url' item.id %}">Remove</a>
+
+      {% endfor %}
+
+      <a href="#">Checkout</a>
+
+    {% endif %}
+
+{% endblock %}

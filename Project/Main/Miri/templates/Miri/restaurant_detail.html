@@ -28,6 +28,13 @@
   <div class="">
     {{restaurant.description}}
   </div>
+
+  <button class="" type="submit" name="button">
+      <a class="" style="text-decoration:none; color: black" href="{% url 'update_cart_url' slug=restaurant.slug %}">
+        Add to Cart
+      </a>
+  </button>
+
   {% endfor %}
 
 
