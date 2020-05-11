@@ -16,7 +16,7 @@ class Cart(models.Model):
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart, blank=True, null=True, on_delete=models.CASCADE)
     product = models.ForeignKey(Foods, on_delete=models.CASCADE, null=True, blank=True)
-    quantity = models.IntegerField(default=1)
+    quantity = models.IntegerField(default=0)
     line_total = models.DecimalField(default=0, max_digits=1000, decimal_places=0)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)

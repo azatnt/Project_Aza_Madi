@@ -15,7 +15,7 @@ def gen_slug(s):
 
 class Restaurants(models.Model):
     name = models.CharField(max_length=120, unique=True) #name of restaurant
-    slug = models.SlugField(blank=True)
+    slug = models.SlugField(blank=True, unique=True)
     image = models.ImageField(upload_to='rest-image', blank=True, default='smth')
     description = models.TextField(max_length=1000) #main information about restaurant
     address = models.CharField(max_length=120)
@@ -38,7 +38,7 @@ class Restaurants(models.Model):
 
 class Foods(models.Model):
     name = models.CharField(max_length=120)
-    slug = models.SlugField(blank=True)
+    slug = models.SlugField(blank=True, unique=True)
     image = models.ImageField(blank=True, upload_to='food-image', default='smth')
     price = models.IntegerField()
     description = models.TextField(max_length=1000)

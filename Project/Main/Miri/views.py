@@ -4,13 +4,10 @@ from Category.models import *
 
 
 
-def index(request):
-	return render(request, 'Miri/index.html', context={})
-
 
 
 def restaurant_detail(request, slug):
-	restaurant = Restaurants.objects.get(slug=slug)
+	restaurant = Restaurants.objects.get(slug__iexact=slug)
 	food = Foods.objects.all()
 	return render(request, 'Miri/restaurant_detail.html', context={'food':food, 'restaurant':restaurant})
 

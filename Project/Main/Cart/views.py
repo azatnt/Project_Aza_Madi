@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect, redirect
 from django.urls import reverse
 from .models import *
 from Restaurants.models import *
+from Miri.views import *
 
 
 
@@ -46,7 +47,6 @@ def remove_from_cart(request, id):
 
 def update_cart(request, slug):
     request.session.set_expiry(900)
-
     try:
         qty = session.GET.get('qty')
         update_qty = True
@@ -55,15 +55,19 @@ def update_cart(request, slug):
         update_qty = False
 
 
+
     try:
         the_id = request.session['cart_id']
+
     except:
         new_cart = Cart()
         new_cart.save()
+
         request.session['cart_id'] = new_cart.id
         the_id = new_cart.id
 
     cart = Cart.objects.get(id=the_id)
+
 
 
     try:
@@ -74,9 +78,24 @@ def update_cart(request, slug):
         pass
 
 
+
+    try:
+        rest = Restaurants.objects.get(slug=slug)
+    except Restaurants.DoesNotExist:
+        pass
+    except:
+        pass
+
+
+
     cart_item, created = CartItem.objects.get_or_create(cart=cart, product=product)
     if created:
         print('Created')
+    request.session['items_total'] = cart.cartitem_set.count()
+    print(cart_item)
+    cart_item.quantity += 1
+    cart_item.save()
+    print(cart_item)
 
     if update_qty and qty:
         if int(qty) == 0:
@@ -88,7 +107,9 @@ def update_cart(request, slug):
         pass
 
 
-        return HttpResponseRedirect(reverse('cart_url'))
+
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        # return redirect('restaurant_detail_url', slug=)
 
 
     return HttpResponseRedirect(reverse('cart_url'))

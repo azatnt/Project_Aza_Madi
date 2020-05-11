@@ -16,7 +16,7 @@ urlpatterns = [
 	path('restaurant/<str:slug>', restaurant_detail, name='restaurant_detail_url'),
 	path('category/<slug:slug>', category_detail, name='category_detail_url'),
 	path('cart/<str:id>\d+', remove_from_cart, name = 'remove_cart_url'),
-	path('cart/<str:slug>', update_cart, name = 'update_cart_url'),
+	path('cart/<str:slug>/', update_cart, name = 'update_cart_url'),
 	path('cart/', cart, name='cart_url'),
 
 ]
