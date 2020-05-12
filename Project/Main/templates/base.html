@@ -32,30 +32,32 @@
 
   <header class="header">
     <div class="logo">
-      <p id="companionMethods"></p>
+      <a href="">Miri</a>
     </div>
     <div class="search">
         <input type="text" class="search-food" name="search-food" placeholder="Поиск ресторана">
     </div>
 
-    <div class="header-login-button">
-      <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="23px">
-      {% if user.is_authenticated %}
-        <a class="log-out fadeIn" href="{% url 'logout_url' %}"> Выйти</a>
-      {% else %}
-          <a class="log-in" href="{% url 'login_url' %}"> Войти</a>
-          <!-- <a href="{% url 'signup_url' %}">Регистация</a> -->
-      {% endif %}
-    </div>
-    <div class="basket-button">
-        <img src="{% static 'img/basket.png' %}" alt="basket" width="25px" class="basket-icon">
-      <a href="{% url 'cart_url' %}">
-        Корзина
-        {% if not request.session.items_total %}
-          0
-        {% else %} {{request.session.items_total}}
+    <div class="header-nav">
+      <div class="header-login-button">
+        <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
+        {% if user.is_authenticated %}
+          <a class="log-out fadeIn" href="{% url 'logout_url' %}"> Выйти</a>
+        {% else %}
+            <a class="log-in" href="{% url 'login_url' %}"> Войти</a>
+            <!-- <a href="{% url 'signup_url' %}">Регистация</a> -->
         {% endif %}
-      </a>
+      </div>
+      <div class="basket-button">
+          <img src="{% static 'img/basket.png' %}" alt="basket" width="15px" class="basket-icon">
+        <a href="{% url 'cart_url' %}">
+          Корзина
+          {% if not request.session.items_total %}
+            <p class="count-food">0</p>
+          {% else %} {{request.session.items_total}}
+          {% endif %}
+        </a>
+      </div>
     </div>
   </header>
 

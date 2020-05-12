@@ -15,10 +15,9 @@
     <div class="basket-field">
   {% else %}
       <h2 class="basket-title">Корзина</h2>
-      <div class="total-sum">
-        Общая сумма: {{cart.total}}
-      </div>
-      <div class="basket-carts">
+      <div class="basket-field">
+        <div class="basket-items">
+        <div class="basket-carts">
         {% for item in cart.cartitem_set.all %}
         <div class="basket-item">
             <div class="basket-product__name">
@@ -34,9 +33,14 @@
         </div>
         {% endfor %}
       </div>
+      </div>
 
       <div class = "checkout-btn"> 
-        <a href="https://robokassa.kz/">Оплатить</a>
+          <div class="total-sum">
+             Общая сумма: {{cart.total}}
+          </div>
+        <a href="https://robokassa.kz/" class="buy-product">Оплатить</a>
+      </div>
       </div>
 
     {% endif %}

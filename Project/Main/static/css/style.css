@@ -53,6 +53,7 @@ a {
 }
 
 .header input {
+    width: 100%;
   text-align: left;
   border: 1px solid black;
   padding: 10px;
@@ -69,8 +70,10 @@ a {
 }
 
 .search {
-    width: 55%;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -101,19 +104,25 @@ a {
     border-radius: 10px;
 }
 
+.header-nav {
+    width: max-content;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
 .header-login-button {
     font-family: 'Roboto',-apple-system,sans-serif;
     font-weight: 500;
+    font-size: 15px;
     text-align: center;
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width:  10%;
-    border: 1px solid black;
-    margin: 0 auto;
+    padding: 0 5px;
     cursor: pointer;
     transition: 0.3s ease-in;
+
 }
 
 .login-icon {
@@ -122,32 +131,38 @@ a {
 
 .basket-button {
     font-family: 'Roboto', sans-serif;
+    margin-left: 30px;
     font-weight: 500;
     text-align: center;
     display: flex;
-    height: 50px;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 10%;
-    border: 1px solid black;
-    padding-left: 10px;
-    font-size: 17px;
+    padding:  15px 10px 10px 10px;
+    font-size: 15px;
     cursor: pointer;
-    margin-right: 30px;
     transition: 0.3s ease-out;
+}
+
+.count-food {
+    display: inline;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    font-weight: ;
 }
 
 .basket-icon {
     margin-right: 10px;
+    margin-bottom: 15px;
 }
 
 .header-login-button:hover {
-    border: 1px solid orange;
+    border-bottom: 1px solid orange;
 }
 
 .basket-button:hover {
-    border: 1px solid orange;
+    border-bottom: 1px solid orange;
 }
 
 
@@ -476,22 +491,31 @@ a {
 
 .basket-carts {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.basket-field {
+    display: flex;
+    justify-content: center;
+
 }
 
 
 .basket-item {
     background-color: orange;
-    width: 25%;
-    padding: 50px;
+    margin: 10px;
+    width: 100%;
+    padding: 10px;
     position: relative;
     border-radius: 5px;
 }
 
 .basket-product__name {
     font-family: 'Lexend Exa', sans-serif;
-    color: white;
-    text-align: center;
+    color: black;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 .basket-product__quantity {
@@ -500,9 +524,9 @@ a {
 }
 
 .remove-product {
-    background-color: firebrick;
+    background-color: white;
     text-align: center;
-    color: white;
+    color: red;
     font-family: 'Roboto',-apple-system,sans-serif;
     padding: 5px 10px;
     border-radius: 50%;
@@ -520,6 +544,9 @@ a {
     font-weight: 700;
     font-size: 25px;
     margin-left: 40px;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .total-sum::after {
@@ -533,20 +560,28 @@ a {
     margin-left: 40px;
 }
 
+.basket-items {
+    width: 40%;
+}
+
 .checkout-btn {
-    position: fixed;
     background-color: limegreen;
     font-family: 'Roboto',-apple-system,sans-serif;
     width: max-content;
     padding: 20px;
-    bottom: 20px;
     right: 20px;
+    width: 40%;
+    margin-right: 12px;
+    margin-left: 80px;
     margin-bottom: 0px;
     transition: 0.3s ease-in;
+    position: relative;
 }
 
-.checkout-btn:hover {
-    margin-bottom: 20px
+.buy-product__btn {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
 }
 
 .checkout-btn a {
