@@ -6,6 +6,9 @@ from Category.models import *
 
 
 
+
+
+
 def restaurant_detail(request, slug):
 	restaurant = Restaurants.objects.get(slug__iexact=slug)
 	rest_name = Restaurants.objects.filter(slug=slug)
