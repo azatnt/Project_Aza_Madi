@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+
+  Restaurant's name
+
+{% endblock %}
+
+
+
+{% block content %}
+
+  {% for rest_name in rest_name %}
+    {{rest_name.name}}
+  {% endfor %}
+
+{% endblock %}
