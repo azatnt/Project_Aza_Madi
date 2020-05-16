@@ -8,8 +8,16 @@
 
 {% block content %}
 
-<h3 class="res-header">Меню</h3>
 
+{% for restaurant in rest_name %}
+
+   <h3 class="res-header">Меню</h3>
+   <div class="">
+     {{restaurant.name}}
+   </div>
+
+
+{% endfor %}
 
 
 <div class="res-foods">

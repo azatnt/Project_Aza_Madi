@@ -6,10 +6,14 @@ from Category.models import *
 
 
 
+
+
+
 def restaurant_detail(request, slug):
 	restaurant = Restaurants.objects.get(slug__iexact=slug)
+	rest_name = Restaurants.objects.filter(slug=slug)
 	food = Foods.objects.all()
-	return render(request, 'Miri/restaurant_detail.html', context={'food':food, 'restaurant':restaurant})
+	return render(request, 'Miri/restaurant_detail.html', context={'food':food, 'restaurant':restaurant, 'rest_name':rest_name})
 
 
 

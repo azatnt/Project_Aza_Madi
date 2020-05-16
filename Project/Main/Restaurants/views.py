@@ -11,8 +11,13 @@ def restaurant_list(request):
     promo = Promo.objects.all()
     category = Category.objects.all()
     context = {
-        'category':category,
         'restaurant': restaurant,
+        'category':category,
         'promo':promo
     }
     return render(request, 'restaurants/restaurants_list.html', context=context)
+
+
+# def rest_name(request, name):
+#     rest_name = Restaurants.objects.filter(name=name)
+#     return render(request, 'restaurants/rest_name.html', context={'rest_name':rest_name})
