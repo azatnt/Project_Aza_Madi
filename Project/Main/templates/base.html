@@ -75,10 +75,24 @@
 
 
 
-  {% block content %}
+  {% block content %}  
   {% endblock %}
 
 
+  {% block component %}
+
+  {% endblock %}
+
+
+  <footer class="footer">
+    <div class="footer__info">
+      <a href="https://github.com/omirzakov" target="__blank">Умирзаков Мадияр</a> | 
+      <a href="https://github.com/azatnt" target="__blank">Аманжол Азат</a>
+    </div>
+    <div class="footer__title">
+      Все права защищены 2020
+    </div>
+  </footer>
 
   <script src="{% static 'vendor/jquery-3.5.1.min.js'  %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
