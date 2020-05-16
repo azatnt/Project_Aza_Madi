@@ -10,10 +10,11 @@
 
 <div class="content-section">
 	<form method="POST">
-		{% csrf_token %}
+
 		<fieldset class="">
 			<legend class=""><h3>Join to us</h3></legend>
 			<div class="">
+				{% csrf_token %}
 				{{ form|crispy }}
 			</div>
 		</fields>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  Profile
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="">
+    {{user.username}}
+  </div>
+  <div class="">
+    {{user.email}}
+  </div>
+  <div class="">
+    <img class="profile_img" src="{{user.profile.image.url}}" alt="">
+  </div>
+
+  <div class="">
+    <form class="" action="{% url 'profile_url' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{u_form}}
+      {{p_form}}
+      <button type="submit" name="button">Update</button>
+    </form>
+  </div>
+
+
+{% endblock %}

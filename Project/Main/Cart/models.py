@@ -1,8 +1,11 @@
 from django.db import models
 from Restaurants.models import *
+from django.contrib.auth.models import User
+
 
 
 class Cart(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     total = models.DecimalField(default=0, max_digits=1000, decimal_places=0)
     imestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
