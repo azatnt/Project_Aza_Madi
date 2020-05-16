@@ -592,3 +592,38 @@ a {
 .empty-cart__text {
     font-family: 'Roboto',-apple-system,sans-serif;
 }
+
+
+/* footer */
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: 50px;
+    min-height: 150px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.footer__title {
+    margin-top: 20px;
+    color: yellow;
+    display: inline-block;
+}
+
+.footer a {
+    color: white;
+    transition: 0.3s;
+}
+.footer a:hover {
+    border-bottom: 2px dashed red;
+    color: red;
+}

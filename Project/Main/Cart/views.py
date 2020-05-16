@@ -54,6 +54,8 @@ def update_cart(request, slug):
         qty = None
         update_qty = False
 
+        
+
 
 
     try:
