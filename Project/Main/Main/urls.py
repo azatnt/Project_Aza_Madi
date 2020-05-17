@@ -24,7 +24,7 @@ from django.conf import settings
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', include('Miri.urls')),
     path('signup', v.SignUp, name='signup_url'),
     path('login/', auth_view.LoginView.as_view(template_name='user/login.html'), name='login_url'),

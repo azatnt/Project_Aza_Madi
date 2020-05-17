@@ -21,6 +21,7 @@ def cart(request):
             line_total = float(item.product.price) * item.quantity
             new_total += line_total
         cart.total = new_total
+        cart.user = request.user
         cart.save()
         request.session['items_total'] = cart.cartitem_set.count()
         context = {'cart':cart}
