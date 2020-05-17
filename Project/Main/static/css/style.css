@@ -147,9 +147,7 @@ a {
 .count-food {
     display: inline;
     text-align: center;
-    width: 100%;
     margin: 0 auto;
-    font-weight: ;
 }
 
 .basket-icon {
@@ -599,6 +597,7 @@ a {
 .footer {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
     align-items: center;
     flex-direction: column;
 }
