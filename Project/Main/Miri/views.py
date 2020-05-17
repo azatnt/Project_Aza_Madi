@@ -6,7 +6,9 @@ from Cart.models import *
 
 
 
-
+# def test(request):
+# 	cartitem = CartItem.objects.get(product=product)
+# 	return render(request, 'Miri/test.html', context={'cartitem':cartitem})
 
 
 
