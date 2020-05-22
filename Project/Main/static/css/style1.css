@@ -597,3 +597,86 @@ a {
   height: 300px;
   border: 1px solid black;
 }
+
+
+.login-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    left: 0;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer__title, .footer__info {
+    text-align: center;
+}
+
+
+.login__btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-section button {
+    font-size: 20px;
+    width: 100%;
+    border: 1px solid #162138;
+    color: #162138;
+    border-radius: 3px;
+    font-weight: normal;
+    transition: 0.3s ease;
+    padding: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+
+
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-section label {
+    display: none;
+}
+
+.login-section input {
+    font-family: 'Roboto';
+    transition: 0.3s;
+    margin: 20px 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 25px;
+    border-bottom: 2px solid #162138 ;
+}
+
+.login__link {
+    margin-top: 20px;
+}
+
+.login__link a {
+    color: #0b6b2b;
+}
+
+.login-section:hover {
+    border-bottom: dodgerblue;
+}
