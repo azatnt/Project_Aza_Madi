@@ -35,31 +35,10 @@
       <a href="{% url 'restaurant_list_url' %}">Miri</a>
     </div>
 
-
-
-
-
-    <div class="search">
-        {% csrf_token %}
-        <input id="search" type="text" class="search-food" name="search-food" placeholder="Поиск ресторана">
-        <ul>
-          <li id="search_results">
-
-          </li>
-        </ul>
-    </div>
-
-
-
-
-
-
-
-
-
-    <a href="{% url 'profile_url' %}">Profile</a>
-
     <div class="header-nav">
+      <div class="user-profile">
+        <a href="{% url 'profile_url' %}">Profile</a>
+      </div>
       <div class="header-login-button">
         <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
         {% if user.is_authenticated %}
@@ -69,13 +48,14 @@
             <!-- <a href="{% url 'signup_url' %}">Регистация</a> -->
         {% endif %}
       </div>
+      
       <div class="basket-button">
           <img src="{% static 'img/basket.png' %}" alt="basket" width="15px" class="basket-icon">
         <a href="{% url 'cart_url' %}">
           Корзина
           {% if not request.session.items_total %}
             <p class="count-food">0</p>
-          {% else %} {{request.session.items_total}}
+       <!--  -->   {% else %} {{request.session.items_total}}
           {% endif %}
         </a>
       </div>
@@ -88,26 +68,18 @@
 
       {% endblock %}
     </div>
-</div>
-
-
-
+  </div>
+  
+    <div class="res-search">
+      {% csrf_token %}
+      <input id="search" type="text" class="search-food" name="search-food" placeholder="Поиск ресторана">
+    </div>
 
   {% block content %}
   {% endblock %}
 
 
 
-
-  <footer class="footer">
-    <div class="footer__info">
-      <a href="https://github.com/omirzakov" target="__blank">Умирзаков Мадияр</a> |
-      <a href="https://github.com/azatnt" target="__blank">Аманжол Азат</a>
-    </div>
-    <div class="footer__title">
-      Все права защищены 2020
-    </div>
-  </footer>
   </div>
 
 

@@ -5,3 +5,4 @@ for (let i = 0; i < getSliderIcons.length; i++) { // Берем из БД URL и
     getSliderIcons[i].style.backgroundImage =  "url(" + getUrl + ")";
 }
 
+
