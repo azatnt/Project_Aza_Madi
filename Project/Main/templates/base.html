@@ -34,9 +34,27 @@
     <div class="logo">
       <a href="{% url 'restaurant_list_url' %}">Miri</a>
     </div>
+
+
+
+
+
     <div class="search">
-        <input type="text" class="search-food" name="search-food" placeholder="Поиск ресторана">
+        {% csrf_token %}
+        <input id="search" type="text" class="search-food" name="search-food" placeholder="Поиск ресторана">
+        <ul>
+          <li id="search_results">
+
+          </li>
+        </ul>
     </div>
+
+
+
+
+
+
+
 
 
     <a href="{% url 'profile_url' %}">Profile</a>
@@ -75,18 +93,15 @@
 
 
 
-  {% block content %}  
+  {% block content %}
   {% endblock %}
 
 
-  {% block component %}
-
-  {% endblock %}
 
 
   <footer class="footer">
     <div class="footer__info">
-      <a href="https://github.com/omirzakov" target="__blank">Умирзаков Мадияр</a> | 
+      <a href="https://github.com/omirzakov" target="__blank">Умирзаков Мадияр</a> |
       <a href="https://github.com/azatnt" target="__blank">Аманжол Азат</a>
     </div>
     <div class="footer__title">
@@ -95,11 +110,22 @@
   </footer>
   </div>
 
+
+    <!-- jQuery !-->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script> -->
+  <!-- jQuery UI !-->
+  <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
+
+
   <script src="{% static 'vendor/jquery-3.5.1.min.js'  %}"></script>
+  <script src="{% static 'vendor/ajax.js' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
   <script src="{% static 'vendor/slick-1.8.1/slick/slick.min.js' %}" ></script>
   <script src="{% static 'js/slider.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+
+
 
     <script>
     if('geolocation' in navigator) {
@@ -113,5 +139,9 @@
       console.log('geolocation not aviable');
     }
   </script>
+
+
+
+
 </body>
 </html>

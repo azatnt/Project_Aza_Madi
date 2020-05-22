@@ -20,6 +20,9 @@ urlpatterns = [
 	path('cart/<str:id>\d+', remove_from_cart, name = 'remove_cart_url'),
 	path('cart/<str:slug>/', update_cart, name = 'update_cart_url'),
 	path('cart/', cart, name='cart_url'),
+	# path('test/', test),
+	path('search/', search, name='search_url'),
+
 
 
 ]
