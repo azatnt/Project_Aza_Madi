@@ -8,22 +8,19 @@ Registration
 
 {% block content %}
 
-<div class="content-section">
-	<form method="POST">
+<div class="login-section">
+	<form method="POST" class="login-form">
 		{% csrf_token %}
-		<fieldset class="">
-			<legend class=""><h3>Log In</h3></legend>
 			<div class="">
 				{{ form|crispy }}
 			</div>
-		</fields>
-		<div class="">
-			<button class="" btn btn-outline-info type="submit">Login</button>
+		<div class="login__btn">
+			<button class="" btn btn-outline-info type="submit">Войти</button>
+		</div>
+		<div class="login__link">
+			Нету аккаунта? <a class="" href="{% url 'signup_url' %}">Регистрация</a>
 		</div>
 	</form>
-		<div class="">
-			Need an account? <a class="" href="{% url 'signup_url' %}">Sign Up</a>
-		</div>
 </div>
 
 {% endblock %}
