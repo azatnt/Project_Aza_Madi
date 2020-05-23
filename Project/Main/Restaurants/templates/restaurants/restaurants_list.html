@@ -18,6 +18,18 @@
 {% endblock %}
 
 
+{% block search %}
+
+<div class="res-search">
+  {% csrf_token %}
+  <input id="search" type="text" class="search-food" name="search-food" placeholder="Поиск ресторана">
+</div>
+
+{% endblock %}
+
+
+
+
 {% block content %}
 
 
