@@ -7,20 +7,25 @@
 
 
 
-
 {% block content %}
+<div class="profile">
+  
+  <div class="profile__head">
 
-  <div class="">
-    {{user.username}}
-  </div>
-  <div class="">
-    {{user.email}}
-  </div>
-  <div class="">
-    <img class="profile_img" src="{{user.profile.image.url}}" alt="">
+    <div class="profile__img">
+      <img class="profile_img" src="{{user.profile.image.url}}" alt="">
+    </div>
+    
+    <div class="profile__main">
+      <div>{{ user.username }}</div>
+      <div>{{ user.email }}</div>
+    </div>
+
   </div>
 
-  <div class="">
+  <div class="btn-change"><button>Изменить</button></div>
+
+  <div class="profile__info">
     <form class="" action="{% url 'profile_url' %}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{u_form}}
@@ -28,7 +33,5 @@
       <button type="submit" name="button">Update</button>
     </form>
   </div>
-
-
-
+</div>
 {% endblock %}
