@@ -704,6 +704,11 @@ a {
     margin-top: 20px;
 }
 
+.login-section {
+    justify-content: center;
+    align-items: center;
+}
+
 .login-section button {
     font-size: 20px;
     width: 100%;
@@ -764,4 +769,94 @@ a {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6)
+}
+
+
+/* Профиль */
+
+.profile {
+    padding-top: 50px;
+}
+
+.profile__head {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.profile__main {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.profile__info {
+    display: none;
+}
+
+.profile__main div:nth-child(1) {
+    color: seagreen;
+    margin-bottom: 20px;
+}
+
+.btn-change {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.btn-change button {
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    background-color: seagreen;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-change__active {
+    opacity: 1;
+}
+
+.btn-change button:hover {
+    background-color: green;
+}
+
+.profile form {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.profile form input {
+    width: 50%;
+    padding: 5px;
+    margin: 10px 0;
+
+}
+
+.profile form label {
+    margin-top: 10px;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.profile span {
+    display: none;
+}
+
+.profile form button {
+    width: 20%;
+    border:none;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
