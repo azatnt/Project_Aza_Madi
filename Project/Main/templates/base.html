@@ -26,61 +26,71 @@
 
   {% endblock %}
 </title>
+
+
 <body>
-
   <div class="main-wrapper">
-
   <header class="header">
     <div class="logo">
       <a href="{% url 'restaurant_list_url' %}">Miri</a>
     </div>
 
     <div class="header-nav">
-      <div class="user-profile">
-        <a href="{% url 'profile_url' %}">Profile</a>
-      </div>
+
       <div class="header-login-button">
-        <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
         {% if user.is_authenticated %}
+        <div class="user-profile">
+          <a href="{% url 'profile_url' %}">Profile</a>
+        </div>
+
+        <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
+
           <a class="log-out fadeIn" href="{% url 'logout_url' %}"> Выйти</a>
         {% else %}
+            <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
             <a class="log-in" href="{% url 'login_url' %}"> Войти</a>
             <!-- <a href="{% url 'signup_url' %}">Регистация</a> -->
         {% endif %}
       </div>
-      
+
       <div class="basket-button">
           <img src="{% static 'img/basket.png' %}" alt="basket" width="15px" class="basket-icon">
         <a href="{% url 'cart_url' %}">
           Корзина
           {% if not request.session.items_total %}
             <p class="count-food">0</p>
-       <!--  -->   {% else %} {{request.session.items_total}}
+          {% else %} {{request.session.items_total}}
           {% endif %}
         </a>
       </div>
     </div>
   </header>
 
-  <div class="slider-content">
-    <div class="slider-promo slider">
-      {% block slider %}
 
-      {% endblock %}
-    </div>
+      <div class="slider-content">
+        <div class="slider-promo slider">
+          {% block slider %}
+
+          {% endblock %}
+        </div>
+      </div>
+
+
+
+     <div class="">
+       {% block search %}
+
+       {% endblock %}
+     </div>
+
+
   </div>
-  
-    <div class="res-search">
-      {% csrf_token %}
-      <input id="search" type="text" class="search-food" name="search-food" placeholder="Поиск ресторана">
-    </div>
+
+
 
   {% block content %}
+
   {% endblock %}
-
-
-
-  </div>
 
 
     <!-- jQuery !-->

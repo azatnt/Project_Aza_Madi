@@ -27,14 +27,14 @@ import json
 #   mimetype = 'application/json'
 #   return HttpResponse(data, mimetype)
 
-def search(request):
-	if request.method == 'POST':
-		search_text = request.POST['search_text']
-	else:
-		search_text = ''
-
-	restaurants = Restaurants.objects.filter(name__icontains=search_text)
-	return render(request, 'Miri/ajax_search.html', {'restaurants':restaurants})
+# def search(request):
+# 	if request.method == 'POST':
+# 		search_text = request.POST['search_text']
+# 	else:
+# 		search_text = ''
+#
+# 	restaurants = Restaurants.objects.filter(name__icontains=search_text)
+# 	return render(request, 'Miri/ajax_search.html', {'restaurants':restaurants})
 
 
 
