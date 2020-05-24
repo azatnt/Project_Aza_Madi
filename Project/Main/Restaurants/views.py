@@ -20,18 +20,10 @@ def restaurant_list(request):
 
 
 
-
 def search(request):
 	if request.method == 'POST':
 		search_text = request.POST['search_text']
 	else:
 		search_text = ''
-
 	restaurants = Restaurants.objects.filter(name__icontains=search_text)
 	return render(request, 'restaurants/ajax_search.html', {'restaurants':restaurants})
-
-
-
-# def rest_name(request, name):
-#     rest_name = Restaurants.objects.filter(name=name)
-#     return render(request, 'restaurants/rest_name.html', context={'rest_name':rest_name})

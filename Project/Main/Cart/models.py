@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 
+
 class Cart(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     total = models.DecimalField(default=0, max_digits=1000, decimal_places=0)
@@ -13,6 +14,7 @@ class Cart(models.Model):
 
     def __str__(self):
         return 'Cart ID: %s' %(self.id)
+
 
 
 

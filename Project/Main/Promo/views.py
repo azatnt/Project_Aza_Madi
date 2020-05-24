@@ -6,4 +6,8 @@ from .models import *
 
 def promo_list(request):
     promo = Promo.objects.all()
-    return render(request, 'promo/promo_list.html', context={'promo':promo})
+    template = 'promo/promo_list.html'
+    context = {
+        'promo':promo
+    }
+    return render(request, template, context)

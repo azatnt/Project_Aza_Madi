@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'Miri',
     'crispy_forms',
     'Restaurants',
-    'Food',
     'Promo',
     'Category',
     'Cart',

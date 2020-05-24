@@ -1,13 +1,10 @@
-from django.conf.urls import url
 from django.urls import path
 from .views import *
 from Restaurants.views import *
-from Food.views import *
 from Promo.views import *
 from Category.views import *
 from Cart.views import *
 from User.views import *
-
 
 
 
@@ -20,9 +17,5 @@ urlpatterns = [
 	path('cart/<str:id>\d+', remove_from_cart, name = 'remove_cart_url'),
 	path('cart/<str:slug>/', update_cart, name = 'update_cart_url'),
 	path('cart/', cart, name='cart_url'),
-	# path('test/', test),
 	path('search/', search, name='search_url'),
-
-
-
 ]

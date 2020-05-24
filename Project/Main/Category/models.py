@@ -5,9 +5,11 @@ from time import time
 
 
 
+
 def gen_slug(s):
     new_slug = slugify(s)
     return new_slug + '-' + str(int(time()))
+
 
 
 
@@ -17,10 +19,9 @@ class Category(models.Model):
     image = models.FileField(upload_to='pictures/%Y/%m/', blank=True, default='smth')
 
 
-
-
     def __str__(self):
         return str(self.name)
+
 
     def save(self, *args, **kwargs):
         if not self.id:
