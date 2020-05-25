@@ -1,0 +1,9 @@
+{% if restaurants.count > 0 %}
+
+{% for restaurant in restaurants %}
+  <li>
+    <a href="{{restaurant.slug}}">{{restaurant.name}}</a>
+  </li>
+{% endfor %}
+
+{% endif %}

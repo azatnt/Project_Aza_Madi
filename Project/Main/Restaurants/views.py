@@ -6,6 +6,16 @@ from Category.models import *
 
 
 
+def search_field(request):
+    if request.method == 'POST':
+        search = request.POST['search']
+    else:
+        search = ''
+    restaurants = Restaurants.objects.filter(name__icontains=search)
+    return render(request, 'restaurants/search.html', context={'restaurants':restaurants})
+
+
+
 def restaurant_list(request):
     restaurant = Restaurants.objects.all()
     promo = Promo.objects.all()
@@ -16,14 +26,3 @@ def restaurant_list(request):
         'promo':promo
     }
     return render(request, 'restaurants/restaurants_list.html', context=context)
-
-
-
-
-def search(request):
-	if request.method == 'POST':
-		search_text = request.POST['search_text']
-	else:
-		search_text = ''
-	restaurants = Restaurants.objects.filter(name__icontains=search_text)
-	return render(request, 'restaurants/ajax_search.html', {'restaurants':restaurants})

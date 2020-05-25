@@ -36,6 +36,7 @@ class UserUpdateForm(forms.ModelForm):
 				  ]
 
 class ProfileUpdateForm(forms.ModelForm):
+	image = forms.ImageField(required=False, widget=forms.FileInput)
 	class Meta:
 		model = Profile
 		fields = ['image']

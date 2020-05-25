@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block title %}
@@ -9,13 +10,13 @@
 
 {% block content %}
 <div class="profile">
-  
+
   <div class="profile__head">
 
     <div class="profile__img">
       <img class="profile_img" src="{{user.profile.image.url}}" alt="">
     </div>
-    
+
     <div class="profile__main">
       <div>{{ user.username }}</div>
       <div>{{ user.email }}</div>
@@ -29,9 +30,13 @@
     <form class="" action="{% url 'profile_url' %}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{u_form}}
-      {{p_form}}
+      {{p_form.image}}
       <button type="submit" name="button">Update</button>
     </form>
   </div>
+
+  <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
+  <a class="log-out fadeIn" href="{% url 'logout_url' %}"> Выйти</a>
+
 </div>
 {% endblock %}

@@ -40,8 +40,7 @@
               <div class="user-profile">
                 <a href="{% url 'profile_url' %}">Profile</a>
               </div>
-              <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
-              <a class="log-out fadeIn" href="{% url 'logout_url' %}"> Выйти</a>
+
             {% else %}
               <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
               <a class="log-in" href="{% url 'login_url' %}"> Войти</a>
@@ -69,6 +68,9 @@
       </div>
     </div>
 
+
+
+
     <div class="">
       {% block search %}
 
@@ -80,14 +82,14 @@
 
   {% endblock %}
 
-  <script src="{% static 'vendor/jquery-3.5.1.min.js'  %}"></script>
+  <script src="{% static 'vendor/jquery-3.5.1.min.js' %}"></script>
   <script src="{% static 'vendor/ajax.js' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
   <script src="{% static 'vendor/slick-1.8.1/slick/slick.min.js' %}" ></script>
   <script src="{% static 'js/slider.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
 
-    <script>
+    <!-- <script>
     if('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(position => {
             $.get( "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude + "," + position.coords.longitude +"&sensor=false", function(data) {
@@ -98,7 +100,7 @@
     else {
       console.log('geolocation not aviable');
     }
-  </script>
+  </script> -->
 
 </body>
 </html>
