@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'Promo',
     'Category',
     'Cart',
+    'Courier',
 ]
 
 MIDDLEWARE = [
