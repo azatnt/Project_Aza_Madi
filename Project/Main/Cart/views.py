@@ -3,7 +3,8 @@ from django.urls import reverse
 from .models import *
 from Restaurants.models import *
 from Miri.views import *
-
+from django.views.generic import View
+from django.shortcuts import get_object_or_404
 
 
 
@@ -35,24 +36,24 @@ def cart(request):
 
 
 
-
-
-def remove_from_cart(request, id):
-    try:
-        the_id = request.session['cart_id']
-        cart = Cart.objects.get(id=the_id)
-    except:
+class RemoveFromCart(View):
+    def get(self, request, id):
+        try:
+            the_id = request.session['cart_id']
+            cart = Cart.objects.get(id=the_id)
+        except:
+            return HttpResponseRedirect(reverse('cart_url'))
+        cartitem = CartItem.objects.get(id=id)
+        cartitem.delete()
         return HttpResponseRedirect(reverse('cart_url'))
-    cartitem = CartItem.objects.get(id=id)
-    cartitem.delete()
-    return HttpResponseRedirect(reverse('cart_url'))
+
 
 
 
 
 
 def update_cart(request, slug):
-    request.session.set_expiry(60)
+    request.session.set_expiry(400)
 
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login_url'))
