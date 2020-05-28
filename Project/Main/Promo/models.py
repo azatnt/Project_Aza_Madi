@@ -3,9 +3,13 @@ from django.utils.text import slugify
 from time import time
 
 
+
+
 def gen_slug(s):
     new_slug = slugify(s)
     return new_slug + '-' + str(int(time()))
+
+
 
 
 class Promo(models.Model):

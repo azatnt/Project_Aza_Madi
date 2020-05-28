@@ -1,19 +1,32 @@
 $(function() {
     $('#search').keyup(function() {
-      $.ajax({
-        type: 'POST',
-        url: '/search/',
-        data: {
-          'search_text' : $('#search').val(),
-          'csrfmiddlewaretoken' : $('input[name=csrfmiddlewaretoken]').val()
-        },
-        success: searchSuccess,
-        dataType: 'html'
-      });
+        var search = $('#search').val();
+        if($.trim(search.length) == 0)
+        {
+          $('#search_results').html('');
+        }
+
+        else{
+          $.ajax({
+          type: 'POST',
+          url: '/search/',
+          data: {
+            'search' : search,
+            'csrfmiddlewaretoken' : $('input[name=csrfmiddlewaretoken]').val()
+          },
+          success: searchSuccess,
+          dataType: 'html',
+
+        });
+        }
+
     });
   });
 
-  function searchSuccess(data, textStatus, jqXHR)
-  {
-    $('#search_results').html(data);
-  }
+
+
+
+function searchSuccess(data, textStatus, jqXHR)
+{
+  $('#search_results').html(data);
+}

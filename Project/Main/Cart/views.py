@@ -3,8 +3,8 @@ from django.urls import reverse
 from .models import *
 from Restaurants.models import *
 from Miri.views import *
-from django.contrib.auth.decorators import login_required
-
+from django.views.generic import View
+from django.shortcuts import get_object_or_404
 
 
 
@@ -36,26 +36,28 @@ def cart(request):
 
 
 
-def remove_from_cart(request, id):
-    try:
-        the_id = request.session['cart_id']
-        cart = Cart.objects.get(id=the_id)
-    except:
+class RemoveFromCart(View):
+    def get(self, request, id):
+        try:
+            the_id = request.session['cart_id']
+            cart = Cart.objects.get(id=the_id)
+        except:
+            return HttpResponseRedirect(reverse('cart_url'))
+        cartitem = CartItem.objects.get(id=id)
+        cartitem.delete()
         return HttpResponseRedirect(reverse('cart_url'))
 
-    cartitem = CartItem.objects.get(id=id)
-    cartitem.delete()
-    return HttpResponseRedirect(reverse('cart_url'))
+
+
 
 
 
 def update_cart(request, slug):
-    request.session.set_expiry(60)
+    request.session.set_expiry(400)
 
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse('login_url'))
     else:
-        
         try:
             qty = session.GET.get('qty')
             update_qty = True
@@ -63,23 +65,14 @@ def update_cart(request, slug):
             qty = None
             update_qty = False
 
-
-
-
-
         try:
             the_id = request.session['cart_id']
-
         except:
             new_cart = Cart()
             new_cart.save()
-
             request.session['cart_id'] = new_cart.id
             the_id = new_cart.id
-
         cart = Cart.objects.get(id=the_id)
-
-
 
         try:
             product = Foods.objects.get(slug=slug)
@@ -88,25 +81,10 @@ def update_cart(request, slug):
         except:
             pass
 
-
-
-        try:
-            rest = Restaurants.objects.get(slug=slug)
-        except Restaurants.DoesNotExist:
-            pass
-        except:
-            pass
-
-
-
         cart_item, created = CartItem.objects.get_or_create(cart=cart, product=product)
-        if created:
-            print('Created')
         request.session['items_total'] = cart.cartitem_set.count()
-        print(cart_item)
         cart_item.quantity += 1
         cart_item.save()
-        print(cart_item)
 
         if update_qty and qty:
             if int(qty) == 0:
@@ -117,10 +95,5 @@ def update_cart(request, slug):
         else:
             pass
 
-
-
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-            # return redirect('restaurant_detail_url', slug=)
-
-
         return HttpResponseRedirect(reverse('cart_url'))
