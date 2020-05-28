@@ -12,7 +12,7 @@ from User.views import *
 urlpatterns = [
 	path('', RestaurantsList.as_view(), name='restaurant_list_url'),
 	path('<str:slug>', RestaurantDetail.as_view(), name='restaurant_detail_url'),
-	path('profile/', profile, name='profile_url'),
+	path('profile/', Profile.as_view(), name='profile_url'),
 	path('category/<slug:slug>', CategoryDetail.as_view(), name='category_detail_url'),
 	path('cart/<str:id>\d+', RemoveFromCart.as_view(), name = 'remove_cart_url'),
 	path('cart/<str:slug>/', update_cart, name = 'update_cart_url'),

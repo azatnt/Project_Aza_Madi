@@ -6,14 +6,8 @@ from .models import *
 
 
 
-
-
 class SignUpForm(UserCreationForm):
-	# name = forms.CharField(max_length=120)
-	# surname = forms.CharField(max_length=120)
 	email = forms.EmailField()
-	# phone = forms.CharField(max_length=50)
-
 
 	class Meta:
 		model = User
@@ -26,8 +20,6 @@ class SignUpForm(UserCreationForm):
 
 class UserUpdateForm(forms.ModelForm):
 	email = forms.EmailField()
-	# phone = forms.CharField(max_length=50)
-
 
 	class Meta:
 		model = User
@@ -37,6 +29,10 @@ class UserUpdateForm(forms.ModelForm):
 
 class ProfileUpdateForm(forms.ModelForm):
 	image = forms.ImageField(required=False, widget=forms.FileInput)
+	back_image = forms.ImageField(required=False, widget=forms.FileInput)
+
 	class Meta:
 		model = Profile
-		fields = ['image']
+		fields = ['image',
+				  'back_image',
+				  ]

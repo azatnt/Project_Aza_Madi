@@ -17,9 +17,14 @@
       <img class="profile_img" src="{{user.profile.image.url}}" alt="">
     </div>
 
+    <div class="">
+      <img class="" src="{{user.profile.back_image.url}}" alt="">
+    </div>
+
     <div class="profile__main">
       <div>{{ user.username }}</div>
       <div>{{ user.email }}</div>
+
     </div>
 
   </div>
@@ -31,13 +36,14 @@
       {% csrf_token %}
       {{u_form}}
       {{p_form.image}}
+      {{p_form.back_image}}
       <button type="submit" name="button">Update</button>
     </form>
   </div>
 
   <div class="exit-btn">
     <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
-    <a class="log-out fadeIn" href="{% url 'logout_url' %}"> Выйти</a>  
+    <a class="log-out fadeIn" href="{% url 'logout_url' %}"> Выйти</a>
   </div>
 </div>
 {% endblock %}
