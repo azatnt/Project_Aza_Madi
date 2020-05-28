@@ -35,8 +35,9 @@
     </form>
   </div>
 
-  <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
-  <a class="log-out fadeIn" href="{% url 'logout_url' %}"> Выйти</a>
-
+  <div class="exit-btn">
+    <img src="{% static 'img/sign-in.png' %}" alt="Sign-in icon" class="login-icon" width="15px">
+    <a class="log-out fadeIn" href="{% url 'logout_url' %}"> Выйти</a>  
+  </div>
 </div>
 {% endblock %}
