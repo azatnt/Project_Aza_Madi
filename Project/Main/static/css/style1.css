@@ -2,7 +2,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto';
+    position: relative;
 }
+
 
 li {
     list-style: none;
@@ -632,8 +634,8 @@ a {
 
 
 .total-sum {
-    border-bottom: 2px solid orange;
-    margin-bottom: 30px;
+    border-bottom: 2px solid beige;
+    margin-bottom: 40px;
     width: max-content;
     font-family: 'Roboto',-apple-system,sans-serif;
     font-weight: 700;
@@ -671,6 +673,7 @@ a {
     margin-bottom: 0px;
     transition: 0.3s ease-in;
     position: relative;
+    min-height: 450px;
 }
 
 .buy-product__btn {
@@ -681,15 +684,28 @@ a {
 
 .checkout-btn a {
     font-size: 20px;
-    color: white;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+    color: black;
+    transition: 0.3s;
+}
+
+.checkout-btn a:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .empty-cart__text {
     font-family: 'Roboto',-apple-system,sans-serif;
 }
 .profile_img{
-  width: 350px;
-  height: 300px;
+    width: 350px;
+    height: 250px;
   border: 1px solid black;
 }
 
@@ -704,13 +720,16 @@ a {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     background-color: black;
+    position: absolute;
+    display: none;
+    bottom: 0;
     color: white;
-    padding: 10px 0;
-    left: 0;
+    padding: 30px 20px;
+}
+
+.footer li {
+    margin-top: 5px;
 }
 
 .footer a {
@@ -799,7 +818,12 @@ a {
 
 .profile {
     padding-top: 50px;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
 }
+
 
 .profile__head {
     width: 70%;
@@ -810,12 +834,20 @@ a {
 .profile__main {
     font-size: 20px;
     font-weight: 600;
+    width: 60%;
     margin-left: 20px;
     margin-top: 10px;
+    background-color: white;
+    padding: 20px 50px 0 10px;
+    margin-left: 40px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 0;    
 }
 
 .profile__info {
-    display: none;
+    visibility: hidden;
+    display: block;
 }
 
 .profile__main div:nth-child(1) {
@@ -963,4 +995,11 @@ a {
 
 .reg-form input:hover {
     border-bottom: 1px solid green;
+}
+
+
+@media screen and(max-width: 1250px) {
+    .cart-field .cart {
+        width: 35%;
+    }
 }

@@ -9,16 +9,12 @@
 
 
 {% block content %}
-<div class="profile">
+<div class="profile" data-wallpaper = '{{user.profile.back_image.url}}'>
 
   <div class="profile__head">
 
     <div class="profile__img">
       <img class="profile_img" src="{{user.profile.image.url}}" alt="">
-    </div>
-
-    <div class="">
-      <img class="" src="{{user.profile.back_image.url}}" alt="">
     </div>
 
     <div class="profile__main">
