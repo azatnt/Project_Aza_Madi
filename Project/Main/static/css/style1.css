@@ -519,6 +519,16 @@ a {
     cursor: pointer;
 }
 
+
+.count-food {
+    color: orangered;
+    font-size: 12px;
+    border-radius: 4px;
+    position: relative;
+    bottom: 10px;
+    left: 5px;
+}
+
 .add-basket a {
     color: darkorange;
 }
