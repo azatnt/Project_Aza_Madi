@@ -2,33 +2,14 @@
 
 
 {% block title %}
-  Restaurant detail
+  Food Category
 {% endblock %}
 
 
 {% block content %}
 
-
-{% for rest_category in rest_category %}
-
-  <a href="{% url 'food_category_detail_url' slug=rest_category.slug %}">{{ rest_category.name }}</a>
-
-{% endfor %}
-
-
-
-
-{% for restaurant in rest_name %}
-
-   <h3 class="res-header">{{restaurant.name}}</h3>
-   </div>
-
-
-{% endfor %}
-
-
 <div class="res-foods">
-  {% for restaurant in restaurant.food.all %}
+  {% for restaurant in food.food.all %}
   <div class="res-food__cart">
     <div class="res-food__icon">
         <a style="text-decoration: none;" href="#">
@@ -57,6 +38,5 @@
   {% endfor %}
 
 </div>
-
 
 {% endblock %}

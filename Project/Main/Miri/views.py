@@ -10,6 +10,7 @@ from django.shortcuts import get_object_or_404
 class RestaurantDetail(View):
 	model1 = Restaurants
 	model2 = Foods
+	model3 = Food_Category
 	template = 'Miri/restaurant_detail.html'
 
 	def get(self, request, slug):
@@ -17,15 +18,23 @@ class RestaurantDetail(View):
 		rest_name = get_object_or_404(Restaurants, slug=slug)
 		rest_name = self.model1.objects.filter(slug=slug)
 		food = self.model2.objects.all()
+		rest_category = self.model3.objects.all()
 
 		context = {
 			'food':food,
 			'restaurant':restaurant,
-			'rest_name':rest_name
+			'rest_name':rest_name,
+			'rest_category':rest_category
 		}
 		return render(request, self.template, context)
 
 
+def food_category(request, slug):
+	food = Food_Category.objects.get(slug__iexact=slug)
+	context = {
+			'food':food
+			}
+	return render(request, 'Miri/food_category.html', context)
 
 
 class CategoryDetail(View):
