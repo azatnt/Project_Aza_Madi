@@ -1,9 +1,9 @@
 from django.shortcuts import render, HttpResponseRedirect, redirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from .models import *
 from Restaurants.models import *
 from Miri.views import *
-from django.views.generic import View
+from django.views.generic import View, DeleteView
 from django.shortcuts import get_object_or_404
 
 
@@ -24,7 +24,7 @@ def cart(request):
         cart.total = new_total
         # cart.user = request.user
         # we will do that after ordering,
-        #when we will set statul=Ready, I will include this line of code to identify which user's cart was ready
+        #when we will set statul=Ready, I will include this line of code, to identify which user's cart was ready
         cart.save()
         request.session['items_total'] = cart.cartitem_set.count()
         context = {'cart':cart}
