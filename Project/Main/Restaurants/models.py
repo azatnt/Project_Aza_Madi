@@ -44,6 +44,7 @@ class Foods(models.Model):
     price = models.IntegerField()
     description = models.TextField(max_length=1000)
     restaurant = models.ManyToManyField('Restaurants', related_name='food')
+    food_category = models.ManyToManyField('Category.Food_Category', blank=True, related_name='food')
 
 
     def __str__(self):

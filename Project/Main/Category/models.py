@@ -27,3 +27,21 @@ class Category(models.Model):
         if not self.id:
             self.slug = gen_slug(self.name)
         super().save(*args, **kwargs)
+
+
+
+
+class Food_Category(models.Model):
+    name = models.CharField(max_length=120)
+    slug = models.SlugField(blank=True, unique=True)
+    image = models.FileField(upload_to='food_category', blank=True, default='smth')
+
+
+    def __str__(self):
+        return str(self.name)
+
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = gen_slug(self.name)
+        super().save(*args, **kwargs)

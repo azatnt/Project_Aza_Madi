@@ -17,5 +17,6 @@ urlpatterns = [
 	path('cart/<str:id>\d+', RemoveFromCart.as_view(), name = 'remove_cart_url'),
 	path('cart/<str:slug>/', update_cart, name = 'update_cart_url'),
 	path('cart/', cart, name='cart_url'),
+	path('category_food/<slug:slug>', food_category, name='food_category_detail_url'),
 	path('search/', SearchField.as_view(), name='search_url'),
 ]

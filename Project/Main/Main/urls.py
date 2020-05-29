@@ -27,8 +27,9 @@ from django.conf import settings
 urlpatterns = [
     path('admin', admin.site.urls),
     path('', include('Miri.urls')),
+    path('', include('django.contrib.auth.urls')),
     path('signup/', v.SignUp.as_view(), name='signup_url'),
-    path('login/', auth_view.LoginView.as_view(template_name='user/login.html'), name='login_url'),
+    path('/login/', auth_view.LoginView.as_view(template_name='user/login.html'), name='login_url'),
     path('logout/', auth_view.LogoutView.as_view(template_name='user/logout.html'), name='logout_url'),
-    path('', include('django.contrib.auth.urls'))
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
