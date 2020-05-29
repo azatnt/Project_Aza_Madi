@@ -18,6 +18,7 @@ btnChangeUser.addEventListener("click", () => {
     else {
         userInfo.style.visibility = "hidden";
     }
+    
 });
 
 

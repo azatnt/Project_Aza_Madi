@@ -12,8 +12,9 @@ li {
 
 
 .main-wrapper {
-    width: 100%;
-    height: 100%;
+    height: 2500px;
+    position: relative;
+
 }
 .header {
     width: 100%;
@@ -58,9 +59,8 @@ a {
 }
 
 .logo:hover {
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));;
+    background-color: #53796B;
     color: white;
-    border-radius: 4px;
 }
 
 
@@ -200,11 +200,11 @@ a {
 }
 
 .header-login-button:hover {
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid #53796B;
 }
 
 .basket-button:hover {
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid #53796B;
 }
 
 
@@ -658,7 +658,7 @@ a {
 }
 
 .checkout-btn {
-    background-color: limegreen;
+    background-color: #53796B;
     font-family: 'Roboto',-apple-system,sans-serif;
     width: max-content;
     padding: 20px;
@@ -718,10 +718,12 @@ a {
 .footer {
     background-color: black;
     position: absolute;
-    display: none;
+    width: 100%;
     bottom: 0;
+    left: 0;
     color: white;
     padding: 30px 20px;
+
 }
 
 .footer li {
@@ -833,12 +835,16 @@ a {
     width: 60%;
     margin-left: 20px;
     margin-top: 10px;
-    background-color: white;
     padding: 20px 50px 0 10px;
     margin-left: 40px;
     border-radius: 4px;
     position: relative;
     z-index: 0;    
+}
+
+.profile__main div {
+    background-color: white;
+    padding: 5px;
 }
 
 .profile__info {
@@ -940,22 +946,30 @@ a {
 /* reg form */
 
 
-.content-section {
+.content-section { 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
+
+
 .reg-icon {
     position: relative;
-    left: 50px;
+    margin-left: 50px;
     transform: rotate(20deg);
+    transition: 0.3s;
     margin-top: 20px;
+}
+
+.reg-icon:hover {
+    transform: rotate(0deg);
 }
 
 .reg-form {
     position: relative;
-    max-width: 750px;
+    text-align: center;
+    width: 30%;
     margin-top: 30px;
     margin-left: 20px;
     border: 1px solid black;
@@ -967,11 +981,20 @@ a {
     box-shadow: 42px 32px 17px 12px rgba(0,0,0,0.11);;
 }
 
+.reg-form ul {
+    display: none;
+}
+
+.reg-form small {
+    display: none;
+}
+
 .reg-form input {
     border-top: none;
     border-left: none;
     border-right: none;
     margin-bottom: 5px;
+    margin-top: 10px;
     border-bottom: 1px solid black;
     font-size: 17px;
 }
