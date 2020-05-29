@@ -939,6 +939,20 @@ a {
 
 /* reg form */
 
+
+.content-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reg-icon {
+    position: relative;
+    left: 50px;
+    transform: rotate(20deg);
+    margin-top: 20px;
+}
+
 .reg-form {
     position: relative;
     max-width: 750px;

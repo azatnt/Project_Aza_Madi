@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% load crispy_forms_tags %}
 {% block title %}
@@ -19,11 +20,12 @@
 		</div>
 
 		<div class="sign-in__btn">
-			Имеется аккаунт? <a class="" href="{% url 'login_url' %}">Вход</a>
+			Имеется аккаунт? <a class="sign-in__btn" href="{% url 'login_url' %}">Вход</a>
 		</div>
 	</form>
 
 	<div class="reg-icon">
+		<img src="{%  static 'img/user.svg' %}" alt="sss" width="100%">
 	</div>
 </div>
 
