@@ -9,22 +9,19 @@
 {% block content %}
 
 <div class="content-section">
-	<form method="POST">
-
-		<fieldset class="">
-			<legend class=""><h3>Join to us</h3></legend>
+	<form method="POST" class="reg-form">
 			<div class="">
 				{% csrf_token %}
 				{{ form|crispy }}
 			</div>
-		</fields>
-		<div class="">
-			<button class="" btn btn-outline-info type="submit">Sign Up</button>
+		<div class="sign-up__btn">
+			<button btn btn-outline-info type="submit">Регистрация</button>
+		</div>
+
+		<div class="sign-in__btn">
+			Имеется аккаунт? <a class="" href="{% url 'login_url' %}">Вход</a>
 		</div>
 	</form>
-		<div class="">
-			Already have an account? <a class="" href="{% url 'login_url' %}">Sign In</a>
-		</div>
 </div>
 
 {% endblock %}

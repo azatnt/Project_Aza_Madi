@@ -519,6 +519,16 @@ a {
     cursor: pointer;
 }
 
+
+.count-food {
+    color: orangered;
+    font-size: 12px;
+    border-radius: 4px;
+    position: relative;
+    bottom: 10px;
+    left: 5px;
+}
+
 .add-basket a {
     color: darkorange;
 }
@@ -898,3 +908,59 @@ a {
     color: white;
 }
 
+
+/* reg form */
+
+.reg-form {
+    position: relative;
+    max-width: 750px;
+    margin-top: 30px;
+    margin-left: 20px;
+    border: 1px solid black;
+    padding: 60px 40px;
+    border-radius: 4px;
+
+    -webkit-box-shadow: 42px 32px 17px 12px rgba(0,0,0,0.11);
+    -moz-box-shadow: 42px 32px 17px 12px rgba(0,0,0,0.11);
+    box-shadow: 42px 32px 17px 12px rgba(0,0,0,0.11);;
+}
+
+.reg-form input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 5px;
+    border-bottom: 1px solid black;
+    font-size: 17px;
+}
+
+.reg-form label small {
+    display: none;
+}
+
+.reg-form button {
+    border: 1px solid black;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: green;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+}
+
+.reg-form button:hover {
+    color: white;
+    background: green;
+    border: 1px solid green;
+}
+
+.reg-form input:hover {
+    border-bottom: 1px solid green;
+}

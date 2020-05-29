@@ -19,3 +19,13 @@ btnChangeUser.addEventListener("click", () => {
         userInfo.style.display = "none";
     }
 });
+
+
+
+// Анимация добавления продуктов в корзину
+
+let addBasket = document.querySelector(".add-basket");
+
+addBasket.addEventListener('click', () => {
+    console.log('hello');
+});
