@@ -9,7 +9,20 @@
 {% block content %}
 
 <div class="res-foods">
-  {% for restaurant in food.food.all %}
+
+  {% for rest_id in rest_id %}
+
+    {{rest_id.name}}
+<!--     {{rest_id.category.all}}
+ -->
+  {% endfor %}  
+
+
+
+
+  {% for restaurant in food.food_category.all %}
+
+
   <div class="res-food__cart">
     <div class="res-food__icon">
         <a style="text-decoration: none;" href="#">

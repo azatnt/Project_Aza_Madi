@@ -9,11 +9,7 @@
 {% block content %}
 
 
-{% for rest_category in rest_category %}
 
-  <a href="{% url 'food_category_detail_url' slug=rest_category.slug %}">{{ rest_category.name }}</a>
-
-{% endfor %}
 
 
 
@@ -24,11 +20,31 @@
    </div>
 
 
+
+
 {% endfor %}
 
+{% for rest_category in rest_category %}
+
+
+  <a href="{% url 'food_category_detail_url' slug=rest_category.slug rest_slug=restaurant.slug %}">
+   
+   <div>
+    {{ rest_category.name }} 
+   </div> 
+
+  </a>
+
+{% endfor %}
 
 <div class="res-foods">
+  
+  
+
+
   {% for restaurant in restaurant.food.all %}
+
+
   <div class="res-food__cart">
     <div class="res-food__icon">
         <a style="text-decoration: none;" href="#">
@@ -57,6 +73,10 @@
   {% endfor %}
 
 </div>
+
+
+
+
 
 
 {% endblock %}
