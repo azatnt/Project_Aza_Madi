@@ -12,8 +12,8 @@ li {
 
 
 .main-wrapper {
-    height: 2500px;
     position: relative;
+    min-height: 2500px;
 
 }
 .header {
@@ -722,7 +722,6 @@ a {
     bottom: 0;
     left: 0;
     color: white;
-    padding: 30px 20px;
 
 }
 
@@ -818,8 +817,10 @@ a {
     padding-top: 50px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    padding-bottom: 50px;
 }
 
 
@@ -843,8 +844,9 @@ a {
 }
 
 .profile__main div {
-    background-color: white;
     padding: 5px;
+    width: 100%;
+    border-bottom: 1px solid white;
 }
 
 .profile__info {
