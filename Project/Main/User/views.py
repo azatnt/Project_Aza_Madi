@@ -36,6 +36,7 @@ class Profile(View):
 	template = 'user/profile.html'
 
 	def get(self, request, *args, **kwargs):
+		profile = self.model.objects.get_or_create(user=request.user)
 		u_form = UserUpdateForm(instance=request.user)
 		p_form = ProfileUpdateForm(instance=request.user.profile)
 		context = {
