@@ -18,8 +18,8 @@
     </div>
 
     <div class="profile__main">
-      <div>Имя: {{ user.username }}</div>
-      <div>Почта: {{ user.email }}</div>
+      <div>{{ user.username }}</div>
+      <div>{{ user.email }}</div>
 
     </div>
 
@@ -31,8 +31,9 @@
     <form class="" action="{% url 'profile_url' %}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{u_form}}
-      <div class="image-input"> {{p_form.image}} </div>
-      <div class="back__image-input"> {{p_form.back_image}}</div>
+      <a href="{% url 'password_change_url' %}" style='color:white;'>Change a password</a>
+      {{p_form.image}}
+      {{p_form.back_image}}
       <button type="submit" name="button">Update</button>
     </form>
   </div>

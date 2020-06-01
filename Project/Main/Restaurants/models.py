@@ -23,6 +23,7 @@ class Restaurants(models.Model):
     opening_time = models.CharField(max_length=120)
     average_delivery = models.CharField(max_length=120)
     category = models.ManyToManyField('Category.Category', blank=True, related_name='restaurant')
+    # food_category = models.ManyToManyField('Category.Food_Category', blank=True, related_name='restaurant')
 
 
     def __str__(self):
@@ -44,7 +45,7 @@ class Foods(models.Model):
     price = models.IntegerField()
     description = models.TextField(max_length=1000)
     restaurant = models.ManyToManyField('Restaurants', related_name='food')
-    food_category = models.ManyToManyField('Category.Food_Category', blank=True, related_name='food')
+    food_category = models.ManyToManyField('Category.Food_Category', blank=True, related_name='food_category')
 
 
     def __str__(self):

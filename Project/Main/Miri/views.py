@@ -19,7 +19,6 @@ class RestaurantDetail(View):
 		rest_name = self.model1.objects.filter(slug=slug)
 		food = self.model2.objects.all()
 		rest_category = self.model3.objects.all()
-
 		context = {
 			'food':food,
 			'restaurant':restaurant,
@@ -29,10 +28,13 @@ class RestaurantDetail(View):
 		return render(request, self.template, context)
 
 
-def food_category(request, slug):
-	food = Food_Category.objects.get(slug__iexact=slug)
+def food_category(request, slug, rest_slug):
+	# rest_id = get_object_or_404(Restaurants, slug=rest_slug)
+	rest_id = Restaurants.objects.filter(slug=rest_slug)
+	food = get_object_or_404(Food_Category, slug=slug)
 	context = {
-			'food':food
+			'food':food,
+			'rest_id':rest_id
 			}
 	return render(request, 'Miri/food_category.html', context)
 
