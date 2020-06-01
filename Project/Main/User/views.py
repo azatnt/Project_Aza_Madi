@@ -19,7 +19,7 @@ class SignUp(View):
 		return render(request, self.template, context)
 
 	def post(self, request, *args, **kwargs):
-		form = self.form_class(request.POST)
+		form = self.form(request.POST)
 		if form.is_valid():
 			form.save()
 			username = form.cleaned_data.get('username')
