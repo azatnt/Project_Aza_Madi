@@ -31,6 +31,7 @@
     <form class="" action="{% url 'profile_url' %}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{u_form}}
+      <a href="{% url 'password_change_url' %}" style='color:white;'>Change a password</a>
       {{p_form.image}}
       {{p_form.back_image}}
       <button type="submit" name="button">Update</button>
