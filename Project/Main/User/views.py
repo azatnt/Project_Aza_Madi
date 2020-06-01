@@ -19,7 +19,7 @@ class SignUp(View):
 		return render(request, self.template, context)
 
 	def post(self, request, *args, **kwargs):
-		form = self.form_class(request.POST)
+		form = self.form(request.POST)
 		if form.is_valid():
 			form.save()
 			username = form.cleaned_data.get('username')
@@ -36,6 +36,7 @@ class Profile(View):
 	template = 'user/profile.html'
 
 	def get(self, request, *args, **kwargs):
+		profile = self.model.objects.get_or_create(user=request.user)
 		u_form = UserUpdateForm(instance=request.user)
 		p_form = ProfileUpdateForm(instance=request.user.profile)
 		context = {
