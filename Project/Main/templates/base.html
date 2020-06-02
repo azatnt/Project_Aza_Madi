@@ -90,6 +90,19 @@
 
   {% endblock %}
 
+
+  <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d92983.42626009707!2d76.82457600000001!3d43.2570368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgoogle%20cart!5e0!3m2!1sen!2skz!4v1591096857724!5m2!1sen!2skz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+  <section class="user-section">
+    <div class="user-count">
+      <h2>Количество пользователей: <strong class="timer">459032</strong></h2>
+      <h2>Курьеры в Алматы: <strong class="timer">1478</strong></h2>
+    </div>
+
+
+    <img src="{% static 'img/location.svg' %}" alt="location" class="location-icon">
+  </section>
+
     <footer class="footer">
     <div class="footer-content">
       <ul>
@@ -112,6 +125,7 @@
   <script src="{% static 'vendor/slick-1.8.1/slick/slick.min.js' %}" ></script>
   <script src="{% static 'js/slider.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/counter.js' %}"></script>
 
     <!-- <script>
     if('geolocation' in navigator) {
