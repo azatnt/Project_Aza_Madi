@@ -33,7 +33,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
 
 
-    path('password_change/done',
+    path('password_change/done/',
         auth_view.PasswordChangeDoneView.as_view(template_name='Profile/password_changed.html'),
         name='password_change_done_url'),
 

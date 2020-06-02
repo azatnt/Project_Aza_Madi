@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'Category',
     'Cart',
     'Courier',
+    'Chat',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +80,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Main.wsgi.application'
+ASGI_APPLICATION = 'Main.routing.application'
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 
 
 # Database

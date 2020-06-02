@@ -5,6 +5,7 @@ from Promo.views import *
 from Category.views import *
 from Cart.views import *
 from User.views import *
+from Chat.views import *
 
 
 
@@ -19,4 +20,6 @@ urlpatterns = [
 	path('cart/', cart, name='cart_url'),
 	path('category_food/<slug:slug>/<str:rest_slug>', food_category, name='food_category_detail_url'),
 	path('search/', SearchField.as_view(), name='search_url'),
+	path('chat/', index, name='index'),
+	path('chat/<str:room_name>/', room, name='chat'),
 ]
