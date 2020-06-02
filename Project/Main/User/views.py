@@ -44,6 +44,7 @@ class Profile(View):
 			'p_form': p_form
 		}
 		return render(request, self.template, context)
+		
 
 	def post(self, request, *args, **kwargs):
 		profile = self.model.objects.get_or_create(user=request.user)
