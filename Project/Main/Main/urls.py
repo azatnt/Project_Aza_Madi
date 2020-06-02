@@ -32,28 +32,29 @@ urlpatterns = [
     path('login/', auth_view.LoginView.as_view(template_name='user/login.html'), name='login_url'),
     path('', include('django.contrib.auth.urls')),
 
-    path('change_password/done/',
-        auth_view.PasswordChangeDoneView.as_view(template_name='user/password_change_done.html'),
+
+    path('password_change/done',
+        auth_view.PasswordChangeDoneView.as_view(template_name='Profile/password_changed.html'),
         name='password_change_done_url'),
 
     path('change_password/',
-        auth_view.PasswordChangeView.as_view(template_name='user/password_change.html'),
+        auth_view.PasswordChangeView.as_view(template_name='Profile/password_change.html'),
         name='password_change_url'),
 
     path('reset_password/',
-        auth_view.PasswordResetView.as_view(template_name='user/password_reset.html'),
+        auth_view.PasswordResetView.as_view(template_name='Profile/password_reset.html'),
         name='reset_password_url'),
 
     path('reset_password_sent/',
-        auth_view.PasswordResetDoneView.as_view(template_name='user/password_reset_sent.html'),
+        auth_view.PasswordResetDoneView.as_view(template_name='Profile/password_reset_sent.html'),
         name='password_reset_done_url'),
 
     path('reset/<uidb64>/<token>/',
-        auth_view.PasswordResetConfirmView.as_view(template_name='user/password_reset_form.html'),
+        auth_view.PasswordResetConfirmView.as_view(template_name='Profile/password_reset_form.html'),
         name='password_reset_confirm_url'),
 
     path('reset_password_complete/',
-        auth_view.PasswordResetCompleteView.as_view(template_name='user/password_reset_done.html'),
+        auth_view.PasswordResetCompleteView.as_view(template_name='Profile/password_reset_done.html'),
         name='password_reset_complete_url'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
