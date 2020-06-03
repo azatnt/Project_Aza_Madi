@@ -35,6 +35,8 @@ class Restaurants(models.Model):
             self.slug = gen_slug(self.name)
         super().save(*args, **kwargs)
 
+    class Meta:
+        verbose_name_plural = 'Restaurants'
 
 
 
@@ -56,3 +58,6 @@ class Foods(models.Model):
         if not self.id:
             self.slug = gen_slug(self.name)
         super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name_plural = 'Foods'
