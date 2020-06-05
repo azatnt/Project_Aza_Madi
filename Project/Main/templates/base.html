@@ -20,6 +20,8 @@
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick-1.8.1/slick/slick-theme.css' %}"/>
   <title>Главная</title>
   <link rel="shortcut icon" href="https://www.forestapp.cc/img/icon.png">
+  <!-- #bootstrap css for paginations -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
 </head>
 
 <title>
@@ -89,6 +91,39 @@
 
 
   {% endblock %}
+
+
+{% if is_paginated %}
+
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item {% if not prev_url %} disabled {% endif %}">
+        <a class="page-link" href="{{ prev_url }}" tabindex="-1" aria-disabled="true">Previous</a>
+      </li>
+
+      {% for n in page_object.paginator.page_range %}
+
+        {% if page_object.number == n %}
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="?page={{ n }}">{{ n }}<span class="sr-only">(current)</span></a>
+          </li>
+        {% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+
+          <li class="page-item">
+            <a class="page-link" href="?page={{ n }}">{{ n }}</a>
+          </li>
+
+        {% endif%}
+      {% endfor %}
+
+      <li class="page-item {% if not next_url %} disabled {% endif %}">
+        <a class="page-link" href="{{ next_url }}" tabindex="-1" aria-disabled="true">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+{% endif %}
+
 
 
   <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d92983.42626009707!2d76.82457600000001!3d43.2570368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgoogle%20cart!5e0!3m2!1sen!2skz!4v1591096857724!5m2!1sen!2skz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>

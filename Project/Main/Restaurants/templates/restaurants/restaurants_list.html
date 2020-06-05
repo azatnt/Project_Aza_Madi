@@ -52,7 +52,7 @@
 </div>
 
 <div class="cart-field">
-  {% for restaurant in restaurant %}
+  {% for restaurant in page_object.object_list %}
     <div class="cart">
       <div class="cart-icon">
       <a style="text-decoration: none;" href="{% url 'restaurant_detail_url' slug=restaurant.slug %}">

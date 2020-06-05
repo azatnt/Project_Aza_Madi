@@ -37,6 +37,7 @@ class Restaurants(models.Model):
 
     class Meta:
         verbose_name_plural = 'Restaurants'
+        ordering = ['name']
 
 
 
