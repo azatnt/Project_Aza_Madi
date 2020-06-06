@@ -18,3 +18,18 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
+
+
+
+
+class UserAddress(models.Model):
+	address = models.CharField(max_length=120)
+	address2 = models.CharField(max_length=120, null=True, blank=True)
+	postcode = models.CharField(max_length=90)
+	phone = models.CharField(max_length=30)
+	timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+
+	def __str__(self):
+		return str(self.user.username)

@@ -35,11 +35,11 @@
       </div>
       </div>
 
-      <div class = "checkout-btn"> 
+      <div class = "checkout-btn">
           <div class="total-sum">
              Общая сумма: {{cart.total}}
           </div>
-        <a href="https://robokassa.kz/" class="buy-product">Оплатить</a>
+        <a href="{% url 'checkout_url' %}" class="buy-product">Оплатить</a>
       </div>
       </div>
 

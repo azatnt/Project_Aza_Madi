@@ -36,3 +36,21 @@ class ProfileUpdateForm(forms.ModelForm):
 		fields = ['image',
 				  'back_image',
 				  ]
+
+
+PAYMENT_CHOICES = (
+	('C', 'CASH'),
+	('C', 'CARD')
+)
+
+class UserAddressForm(forms.ModelForm):
+	payment_option = forms.ChoiceField(widget=forms.RadioSelect, choices=PAYMENT_CHOICES)
+
+	class Meta:
+		model = UserAddress
+		fields = ['address',
+				  'address2',
+				  'postcode',
+				  'phone',
+				  'payment_option',
+				  ]

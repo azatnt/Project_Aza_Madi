@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Courier',
     'Chat',
     'channels',
+    'Orders',
 ]
 
 MIDDLEWARE = [

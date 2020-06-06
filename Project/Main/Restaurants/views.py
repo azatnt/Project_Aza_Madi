@@ -34,7 +34,7 @@ class RestaurantsList(View):
         restaurant = self.model1.objects.all()
         promo = self.model2.objects.all()
         category = self.model3.objects.all()
-        paginator = Paginator(restaurant, 2)
+        paginator = Paginator(restaurant, 4)
 
         page_number = request.GET.get('page', 1)
         page = paginator.get_page(page_number)
