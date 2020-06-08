@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+
+  List of Orders
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+  {% for order in orders %}
+    <div class="">
+      {{ order.user }}
+      {{ order.order_id }}
+      {{ order.final_total }}
+      {{ order.status }}
+    </div>
+  {% endfor %}
+
+{% endblock %}

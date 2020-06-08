@@ -7,6 +7,9 @@ from Cart.views import *
 from User.views import *
 from Chat.views import *
 from Orders.views import *
+from Courier.views import *
+
+
 
 
 
@@ -23,5 +26,7 @@ urlpatterns = [
 	path('search/', SearchField.as_view(), name='search_url'),
 	path('chat/', index, name='index'),
 	path('chat/<str:room_name>/', room, name='chat'),
-	# path('checkout/', checkout, name = 'checkout_url'),
+	path('checkout/', checkout, name = 'checkout_url'),
+	path('courier/', courier, name='courier_url'),
+
 ]

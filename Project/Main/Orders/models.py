@@ -1,6 +1,7 @@
 from django.db import models
 from Cart.models import Cart
 from django.contrib.auth import get_user_model
+from User.models import UserAddress
 
 
 User = get_user_model()
