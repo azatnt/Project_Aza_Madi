@@ -2,18 +2,26 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto';
+    position: relative;
+}
+
+
+li {
+    list-style: none;
 }
 
 
 .main-wrapper {
-    width: 100%;
-    height: 100%;
+    position: relative;
+    min-height: 2500px;
 
 }
 .header {
     width: 100%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     border-bottom: 1px solid black;
     padding-top: 10px;
     padding-bottom: 15px;
@@ -44,34 +52,67 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     margin-left: 20px;
-    width: 15%;
     font-family: 'Lexend Exa', sans-serif;
     letter-spacing: 10px;
+    transition: 0.3s ease-out;
+    padding: 5px;
 }
+
+.logo:hover {
+    background-color: #53796B;
+    color: white;
+}
+
 
 .logo p::before {
     font-size: 25px;
 }
 
-.header input {
+.res-search {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.res-search input {
   text-align: left;
+  border-bottom: 2px solid;
+  border-left: none;
+  border-top: none;
+  border-right: none;
   padding: 10px;
+  width: 70%;
   margin: 0 auto;
   font-size: 17px;
   transition: 0.3s ease-in;
   padding-left: 20px;
-  border-bottom: none;
 }
 
-.header input:hover {
-    border-color: orange;
+.res-search input:hover {
+    border-color: #53796B;
+}
+
+.header-res nav {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.header-res a {
+    color: red;
 }
 
 .search {
     width: 100%;
     margin: 0 auto;
     display: flex;
-    border-bottom: 2px;
     justify-content: center;
     align-items: center;
 }
@@ -104,10 +145,13 @@ a {
 }
 
 .header-nav {
-    width: max-content;
     display: flex;
-    justify-content: flex-end;
     margin-right: 20px;
+
+}
+
+.header-nav div {
+    margin: 0 20px;
 }
 
 .header-login-button {
@@ -130,10 +174,8 @@ a {
 
 .basket-button {
     font-family: 'Roboto', sans-serif;
-    margin-left: 30px;
     font-weight: 500;
-    text-align: center;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -143,27 +185,34 @@ a {
     transition: 0.3s ease-out;
 }
 
+
 .count-food {
     display: inline;
     text-align: center;
+    width: 100%;
     margin: 0 auto;
 }
 
 .basket-icon {
     margin-right: 10px;
-    margin-bottom: 15px;
+    position: relative;
+    bottom: 2px;
 }
 
 .header-login-button:hover {
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid #53796B;
 }
 
 .basket-button:hover {
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid #53796B;
 }
 
 
 /* Слайдер промо-акции */
+
+.slider-content {
+    max-height: 250px;
+}
 
 
 .cart-promo {
@@ -173,9 +222,9 @@ a {
     background-size: cover;
     align-items: center;
     border-radius: 15px;
-    width: 10%;
+    min-width: 150px;
     margin: 30px;
-    height: 150px !important;
+    height: 150px;
     transition: 0.3s;
 
 }
@@ -199,6 +248,41 @@ a {
 .res-type {
     display: flex;
 }
+
+.header-res nav {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.header-res nav ul {
+    min-height: 30px;
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header-res nav a {
+    color: white;
+}
+
+
+.header-res nav ul li {
+    background-color: #377943;
+    height: 100%;
+    padding: 5px;
+    margin: 10px 20px;
+    border-radius: 5px;
+    width: max-content;
+    transition: 0.3s ease;
+}
+
+.header-res nav ul li:hover {
+    position: relative;
+    transform: scale(1.1);
+}
+
+
 
 .food-cart {
     margin-left: 10px;
@@ -248,6 +332,9 @@ a {
     letter-spacing: 1px;
     margin-bottom: 50px;
 }
+
+
+
 
 .res-type {
     font-family: 'Lexend Exa', sans-serif;
@@ -393,12 +480,6 @@ a {
 }
 
 
-@media screen and(max-width: 900px) {
-    body {
-        background-color: yellow;
-    }
-}
-
 
 /* Меню ресторанов */
 
@@ -432,11 +513,26 @@ a {
     text-align: center;
     padding: 2px 6px;
     border-radius: 5px;
-    transition: 0.5s;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+.count-food {
+    color: orangered;
+    font-size: 12px;
+    border-radius: 4px;
+    position: relative;
+    bottom: 10px;
+    left: 5px;
 }
 
 .add-basket a {
     color: darkorange;
+}
+
+.add-basket:hover {
+    background-color: darkorange;
 }
 
 
@@ -534,8 +630,8 @@ a {
 
 
 .total-sum {
-    border-bottom: 2px solid orange;
-    margin-bottom: 30px;
+    border-bottom: 2px solid beige;
+    margin-bottom: 40px;
     width: max-content;
     font-family: 'Roboto',-apple-system,sans-serif;
     font-weight: 700;
@@ -562,7 +658,7 @@ a {
 }
 
 .checkout-btn {
-    background-color: limegreen;
+    background-color: #53796B;
     font-family: 'Roboto',-apple-system,sans-serif;
     width: max-content;
     padding: 20px;
@@ -573,6 +669,7 @@ a {
     margin-bottom: 0px;
     transition: 0.3s ease-in;
     position: relative;
+    min-height: 450px;
 }
 
 .buy-product__btn {
@@ -583,54 +680,420 @@ a {
 
 .checkout-btn a {
     font-size: 20px;
-    color: white;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+    color: black;
+    transition: 0.3s;
+}
+
+.checkout-btn a:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .empty-cart__text {
     font-family: 'Roboto',-apple-system,sans-serif;
 }
 .profile_img{
-  width: 50px;
-  height: 50px;
-
+    width: 350px;
+    height: 250px;
+  border: 1px solid black;
 }
 
 
-/* footer */
-
-.footer {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    align-items: center;
-    flex-direction: column;
-}
-
-.footer {
-    margin-top: 50px;
-    min-height: 150px;
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding-bottom: 20px;
-    cursor: pointer;
-}
-
-.footer__title {
+.login-section {
     margin-top: 20px;
-    color: yellow;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    color: white;
+
+}
+
+.footer li {
+    margin-top: 5px;
 }
 
 .footer a {
     color: white;
+}
+
+.footer__title, .footer__info {
+    text-align: center;
+}
+
+
+.login__btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-section {
+    justify-content: center;
+    align-items: center;
+}
+
+.login-section button {
+    font-size: 20px;
+    width: 100%;
+    border: 1px solid #162138;
+    color: #162138;
+    border-radius: 3px;
+    font-weight: normal;
+    transition: 0.3s ease;
+    padding: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+
+
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-section label {
+    display: none;
+}
+
+.login-section input {
+    font-family: 'Roboto';
+    transition: 0.3s;
+    margin: 20px 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 25px;
+    border-bottom: 2px solid #162138 ;
+}
+
+.login__link {
+    margin-top: 20px;
+}
+
+.login__link a {
+    color: #0b6b2b;
+}
+
+.login-section:hover {
+    border-bottom: dodgerblue;
+}
+
+
+/* Модальное окно для поиска по ресторанам */
+
+.modal-search {
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6)
+}
+
+
+/* Профиль */
+
+.profile {
+    padding-top: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+
+.profile__head {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.profile__main {
+    font-size: 20px;
+    font-weight: 600;
+    width: 60%;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 20px 50px 0 10px;
+    margin-left: 40px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 0;    
+}
+
+.profile__main div {
+    padding: 5px;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+.profile__info {
+    visibility: hidden;
+    display: block;
+}
+
+.profile__main div:nth-child(1) {
+    color: seagreen;
+    margin-bottom: 20px;
+}
+
+.btn-change {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.btn-change button {
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    background-color: seagreen;
+    color: white;
+    cursor: pointer;
     transition: 0.3s;
 }
-.footer a:hover {
-    border-bottom: 2px dashed red;
-    color: red;
+
+.btn-change__active {
+    opacity: 1;
+}
+
+.btn-change button:hover {
+    background-color: green;
+}
+
+.profile form {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.profile form input {
+    width: 50%;
+    padding: 5px;
+    margin: 10px 0;
+
+}
+
+.profile form label {
+    margin-top: 10px;
+    color: green;
+    margin-bottom: 10px;
+}
+
+.profile span {
+    display: none;
+}
+
+.profile form button {
+    width: 20%;
+    border:none;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.exit-btn {
+    position: fixed;
+    display: inline-flex;
+    background: #4A7979;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 20px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.exit-btn img {
+    width: 20px;
+}
+
+.exit-btn:hover {
+    background: #246E79;
+}
+
+.exit-btn a {
+    color: white;
 }
 
 
-/* форма логина */
+/* reg form */
+
+
+.content-section { 
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+.reg-icon {
+    position: relative;
+    margin-left: 50px;
+    transform: rotate(20deg);
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.reg-icon:hover {
+    transform: rotate(0deg);
+}
+
+.reg-form {
+    position: relative;
+    text-align: center;
+    width: 30%;
+    margin-top: 30px;
+    margin-left: 20px;
+    border: 1px solid black;
+    padding: 60px 40px;
+    border-radius: 4px;
+
+    -webkit-box-shadow: 42px 32px 17px 12px rgba(0,0,0,0.11);
+    -moz-box-shadow: 42px 32px 17px 12px rgba(0,0,0,0.11);
+    box-shadow: 42px 32px 17px 12px rgba(0,0,0,0.11);;
+}
+
+.reg-form ul {
+    display: none;
+}
+
+.reg-form small {
+    display: none;
+}
+
+.reg-form input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    border-bottom: 1px solid black;
+    font-size: 17px;
+}
+
+.reg-form label small {
+    display: none;
+}
+
+.reg-form button {
+    border: 1px solid black;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: green;
+    background-color: white;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+}
+
+.reg-form button:hover {
+    color: white;
+    background: green;
+    border: 1px solid green;
+}
+
+.reg-form input:hover {
+    border-bottom: 1px solid green;
+}
+
+
+@media screen and(max-width: 1250px) {
+    .cart-field .cart {
+        width: 35%;
+    }
+
+    h2 {
+        font-size: 10px;
+    }
+}
+
+
+
+/* карта */
+
+.google-map {
+    
+    margin: 50px auto;
+    display: flex;
+    width: 70%;
+}
+
+
+.user-section {
+    width: 80%;
+    border-top: 2px solid black;
+    font-size: 25px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+.user-section strong {
+    color: #FF7D97;
+    font-size: 35px;
+}
+
+.user-count {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 450px;
+}
+
+
+.location-icon {
+    position: absolute;
+    max-width: 300px;
+    right: 50px;
+    top: 75px;
+    transition: 0.5s;
+    transform: rotate(20deg);
+}
+
+.location-icon:hover {
+    transform: rotate(0deg);
+}
+
+@media screen and(max-width:1250px) {
+    .location-icon {
+        display: none;
+    }
+}
+
 
