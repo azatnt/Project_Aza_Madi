@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'Chat',
     'channels',
     'Orders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
