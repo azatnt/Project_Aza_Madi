@@ -40,10 +40,3 @@ class FoodListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Foods
         fields = '__all__'
-
-
-# class FoodCreateSerializer(serializers.ModelSerializer):
-#     #create food
-#     class Meta:
-#         model = Foods
-#         fields = '__all__'
