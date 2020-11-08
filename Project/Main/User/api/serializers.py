@@ -5,7 +5,6 @@ from rest_framework.validators import UniqueValidator
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-
         def save(self):
             user = User(
                 email=self.validated_data['email'],
@@ -32,3 +31,53 @@ class RegisterSerializer(serializers.ModelSerializer):
                 'password': {'write_only': True},
                 'email': {'required': False}
             }
+
+
+# class ChangeUserSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name')
+#         extra_kwargs = {
+#             'password': {'write_only': True}
+#         }
+#
+#         def save(self):
+#             user.set_password(self.validated_data['password'])
+#             user.save()
+#             return user
+
+class UserPasswordChangeSerializer(serializers.ModelSerializer):
+    # old_password = serializers.CharField(required=True, max_length=30)
+    # password = serializers.CharField(required=True, max_length=30)
+    # confirmed_password = serializers.CharField(required=True, max_length=30)
+
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name')
+        extra_kwargs = {
+            'password': {'write_only': True}
+        }
+
+    #
+    # def validate(self, data):
+    #     # add here additional check for password strength if needed
+    #     if not self.context['request'].user.check_password(data.get('old_password')):
+    #         raise serializers.ValidationError({'old_password': 'Wrong password.'})
+    #
+    #     if data.get('confirmed_password') != data.get('password'):
+    #         raise serializers.ValidationError({'password': 'Password must be confirmed correctly.'})
+    #
+    #     return data
+
+    def update(self, instance, validated_data):
+        instance.set_password(validated_data['password'])
+        instance.save()
+        return instance
+
+    def create(self, validated_data):
+        pass
+
+    @property
+    def data(self):
+        return {'Success': True}
+

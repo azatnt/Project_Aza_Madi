@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
@@ -18,6 +21,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -57,6 +61,8 @@
       <option name="presentableId" value="Default" />
       <updated>1604684481479</updated>
       <workItem from="1604684482629" duration="2421000" />
+      <workItem from="1604692468435" duration="304000" />
+      <workItem from="1604735267588" duration="12370000" />
     </task>
     <servers />
   </component>
@@ -64,21 +70,33 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1604688167852">
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604735994563">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1604688167852" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1604688167848">
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1604735994563" />
+    <state width="958" height="245" key="GridCell.Tab.0.bottom" timestamp="1604736398749">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1604688167848" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1604688167847">
+    <state width="958" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1604736398749" />
+    <state width="958" height="245" key="GridCell.Tab.0.center" timestamp="1604736398747">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1604688167847" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1604688167850">
+    <state width="958" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1604736398747" />
+    <state width="958" height="245" key="GridCell.Tab.0.left" timestamp="1604736398746">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1604688167850" />
+    <state width="958" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1604736398746" />
+    <state width="958" height="245" key="GridCell.Tab.0.right" timestamp="1604736398748">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="958" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1604736398748" />
+    <state width="221" height="457" key="HiddenNamespacesPopup" timestamp="1604736033217">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="221" height="457" key="HiddenNamespacesPopup/0.0.1440.900@0.0.1440.900" timestamp="1604736033217" />
+    <state x="32" y="280" width="1029" height="617" key="dock-window-1" timestamp="1604738573427">
+      <screen x="0" y="23" width="1440" height="808" />
+    </state>
+    <state x="32" y="280" width="1029" height="617" key="dock-window-1/0.23.1440.808@0.23.1440.808" timestamp="1604738573427" />
   </component>
 </project>
