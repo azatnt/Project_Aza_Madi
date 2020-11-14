@@ -6,15 +6,13 @@ from django.views.generic import View
 from django.shortcuts import get_object_or_404
 
 
-
-
 class SignUp(View):
 	form = SignUpForm
 	template = 'user/signup.html'
 
 	def get(self, request, *args, **kwargs):
 		form = self.form()
-		context = {'form' : form}
+		context = {'form': form}
 		return render(request, self.template, context)
 
 	def post(self, request, *args, **kwargs):
@@ -52,7 +50,6 @@ class SignUp(View):
 # 	return render(request, 'user/profile.html', context)
 
 
-
 class UserProfile(View):
 	model = Profile
 	template = 'user/profile.html'
@@ -80,7 +77,7 @@ class UserProfile(View):
 			return redirect('profile_url')
 
 		context = {
-		'u_form': u_form,
-		'p_form': p_form
+			'u_form': u_form,
+			'p_form': p_form
 		}
 		return render(request, self.template, context)

@@ -8,7 +8,7 @@ from rest_framework import generics
 
 class Register(APIView):
     def post(self, request):
-        serializer = RegisterSerializer(data = request.data)
+        serializer = RegisterSerializer(data = request.data, files = request.FILES)
         data = {}
         if serializer.is_valid():
             user = serializer.save()
@@ -50,3 +50,5 @@ class UpdateUser(generics.UpdateAPIView):
 
     def get_object(self, queryset=None):
         return self.request.user
+
+

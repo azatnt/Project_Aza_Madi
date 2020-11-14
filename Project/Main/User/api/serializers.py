@@ -1,6 +1,9 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from User.models import Profile
 from rest_framework.validators import UniqueValidator
+from rest_framework.response import Response
+
 
 
 
@@ -33,23 +36,12 @@ class RegisterSerializer(serializers.ModelSerializer):
             }
 
 
-# class ChangeUserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name')
-#         extra_kwargs = {
-#             'password': {'write_only': True}
-#         }
-#
-#         def save(self):
-#             user.set_password(self.validated_data['password'])
-#             user.save()
-#             return user
 
 class UserPasswordChangeSerializer(serializers.ModelSerializer):
     # old_password = serializers.CharField(required=True, max_length=30)
     # password = serializers.CharField(required=True, max_length=30)
     # confirmed_password = serializers.CharField(required=True, max_length=30)
+    # image = serializers.FileField(source="profile.image", required = )
 
     class Meta:
         model = User
@@ -58,26 +50,24 @@ class UserPasswordChangeSerializer(serializers.ModelSerializer):
             'password': {'write_only': True}
         }
 
-    #
-    # def validate(self, data):
-    #     # add here additional check for password strength if needed
-    #     if not self.context['request'].user.check_password(data.get('old_password')):
-    #         raise serializers.ValidationError({'old_password': 'Wrong password.'})
-    #
-    #     if data.get('confirmed_password') != data.get('password'):
-    #         raise serializers.ValidationError({'password': 'Password must be confirmed correctly.'})
-    #
-    #     return data
+
 
     def update(self, instance, validated_data):
         instance.set_password(validated_data['password'])
+        instance.username = validated_data['username']
+        instance.first_name = validated_data['first_name']
+        instance.last_name = validated_data['last_name']
+        # instance.profile.image = validated_data['image']
+        instance.email = validated_data['email']
         instance.save()
+        print(instance.profile.image)
         return instance
 
     def create(self, validated_data):
         pass
+    #
+    # @property
+    # def data(self):
+    #     return {'Successfully changed': data}
 
-    @property
-    def data(self):
-        return {'Success': True}
-
+        return Response(data)

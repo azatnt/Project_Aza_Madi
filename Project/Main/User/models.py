@@ -8,8 +8,6 @@ from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
 
 
-
-
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='user-profile-image', blank=True, default='default.jpeg')
