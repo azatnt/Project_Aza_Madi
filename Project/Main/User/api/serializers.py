@@ -58,7 +58,11 @@ class UserPasswordChangeSerializer(serializers.ModelSerializer):
         instance.first_name = validated_data['first_name']
         instance.last_name = validated_data['last_name']
         # instance.profile.image = validated_data['image']
-        instance.email = validated_data['email']
+        email = validated_data['email']
+        if User.objects.filter(email=email).count() > 0:
+            raise serializers.ValidationError("Email already exists")
+        else:
+            instance.email = email
         instance.save()
         print(instance.profile.image)
         return instance
