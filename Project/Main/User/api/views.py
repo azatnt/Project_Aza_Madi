@@ -52,3 +52,10 @@ class UpdateUser(generics.UpdateAPIView):
         return self.request.user
 
 
+class ProfileUpdate(generics.UpdateAPIView):
+    serializer_class = ProfileUpdateSerializer
+    model = Profile
+
+    def get_object(self, queryset=None):
+        return self.request.user
+        print(self.request.user.profile)

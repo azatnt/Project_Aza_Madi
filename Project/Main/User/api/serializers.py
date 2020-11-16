@@ -42,21 +42,20 @@ class UserPasswordChangeSerializer(serializers.ModelSerializer):
     # password = serializers.CharField(required=True, max_length=30)
     # confirmed_password = serializers.CharField(required=True, max_length=30)
     # image = serializers.FileField(source="profile.image", required = )
-
+    profile = serializers.PrimaryKeyRelatedField(read_only=True)
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name')
+        fields = ('id', 'username', 'email', 'password', 'first_name', 'last_name', 'profile')
         extra_kwargs = {
             'password': {'write_only': True}
         }
-
-
 
     def update(self, instance, validated_data):
         instance.set_password(validated_data['password'])
         instance.username = validated_data['username']
         instance.first_name = validated_data['first_name']
         instance.last_name = validated_data['last_name']
+        print(validated_data['profile'])
         # instance.profile.image = validated_data['image']
         email = validated_data['email']
         if User.objects.filter(email=email).count() > 0:
@@ -64,7 +63,7 @@ class UserPasswordChangeSerializer(serializers.ModelSerializer):
         else:
             instance.email = email
         instance.save()
-        print(instance.profile.image)
+        # print(instance.profile.image)
         return instance
 
     def create(self, validated_data):
@@ -75,3 +74,20 @@ class UserPasswordChangeSerializer(serializers.ModelSerializer):
     #     return {'Successfully changed': data}
 
         return Response(data)
+
+
+
+class ProfileUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = '__all__'
+
+    def create(self, request, *args, **kwargs):
+        if Profile.objects.filter(user=self.request.user).exists():
+            return Response(data={'detail': 'This user already has a profile'}, status=status.HTTP_400_BAD_REQUEST)
+        return super().create(request, *args, **kwargs)
+
+
+    def update(self, instance, validated_data):
+        print(instance)
+
